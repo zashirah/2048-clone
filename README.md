@@ -15,25 +15,25 @@ The only data I will collect is username and score.
 ## Wireframes
 
 Mobile Home:
-![Mobile Home Wireframe](./home-page-mobile-wireframe.jpg)
+![Mobile Home Wireframe](./home-page-mobile-wireframe.png)
 
 Mobile Playing:
-![Mobile Playing Wireframe](./playing-page-mobile-wireframe.jpg)
+![Mobile Playing Wireframe](./playing-page-mobile-wireframe.png)
 
 Mobile How to:
-![Mobile How to Wireframe](./how-to-page-mobile-wireframe.jpg)
+![Mobile How to Wireframe](./how-to-page-mobile-wireframe.png)
 
 Mobile Leaderboard: 
-![Mobile Leaderboard Wireframe](./leaderboard-mobile-wireframe.jpg)
+![Mobile Leaderboard Wireframe](./leaderboard-mobile-wireframe.png)
 
 Tablet Main:
-![Mobile Home Wireframe](./tablet-main-wireframe.jpg)
+![Mobile Home Wireframe](./tablet-main-wireframe.png)
 
 Tablet How to:
-![Mobile Home Wireframe](./tablet-how-to-wireframe.jpg)
+![Mobile Home Wireframe](./tablet-how-to-wireframe.png)
 
 Descktop View:
-![Desktop Wireframe](./desktop-wireframe.jpg)
+![Desktop Wireframe](./desktop-wireframe.png)
 
 
 ### MVP/PostMVP
