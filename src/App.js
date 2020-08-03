@@ -1,22 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PlayingSurface from './PlayingSurface'
-
+import React from "react";
+import "./App.css";
+import PlayingSurface from "./PlayingSurface";
+import "./tailwind.css";
+import Title from './Title'
+import Button from './Button'
 
 function App() {
+  return (
+    <div className="bg-gray-200 w-screen h-screen flex flex-col flex-no-wrap items-center justify-around">
+      <Title />
+      <Button buttonText={"New Game"} />
+      <Button buttonText={"Leaderboard"} />
+      <Button buttonText={"How to?"} />
 
-  return <div>
-    <div className="title">
-      2048
-
-
-
+      {/* <PlayingSurface /> */}
     </div>
-
-    <PlayingSurface />
-
-  </div>;
+  );
 }
 
 export default App;
