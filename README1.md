@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+## 2048-clone
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+2018-clone is the classic 2048 game. You move the tiles by swiping left, right, up, or down. If a tile is next to a tile of equal value and the user "swipes" in that same direction, the tiles are combined and the value is doubled. The game ends when you double the tile values enough times that you get to the 2048 tile. The game ends when you have no more moves. This happens when every tile is full and no tile has an adjascent tile of the same value. The project will be built using React Hooks with airtable as a backend to hold scores. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API and Data Sample
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Airtable: https://api.airtable.com/v0/appzTXHo32UrzQAzt/Leaderboard?maxRecords=3&view=Grid%20view
 
-### `npm test`
+The only data I will collect is username and score. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes
 
-### `npm run build`
+Mobile Home:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Mobile Playing:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Mobile How to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Mobile Leaderboard: 
 
-### `npm run eject`
+Tablet Main:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Tablet How to:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Descktop View:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### MVP/PostMVP
 
-## Learn More
+The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### MVP 
+*These are examples only. Replace with your own MVP features.*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Find and use external api 
+- Render data on page 
+- Allow user to choose favorites 
 
-### Code Splitting
+#### PostMVP  
+*These are examples only. Replace with your own Post-MVP features.*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Add second API
+- Use local storage to save user favorites
 
-### Analyzing the Bundle Size
+## Project Schedule
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
-### Making a Progressive Web App
+You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+|  Day | Deliverable | Status
+|---|---| ---|
+|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|July 13| Project Approval | Incomplete
+|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|July 14| Pseudocode / actual code | Incomplete
+|July 15| Initial Clickable Model  | Incomplete
+|July 16| MVP | Incomplete
+|July 17| Presentations | Incomplete
 
-### Advanced Configuration
+## Priority Matrix
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
 
-### Deployment
+## Timeframes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
 
-### `npm run build` fails to minify
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 6hrs| 5hrs | 5hrs |
+
+## Code Snippet
+
+Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Change Log
+ Use this section to document what ch
