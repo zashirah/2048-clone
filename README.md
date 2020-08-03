@@ -76,6 +76,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
 
+![2048-clone Priority Matrix](https://app.lucidchart.com/publicSegments/view/922a5b18-7bef-4a23-a502-481d70467b93/image.png)
+
 ## Timeframes
 
 Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
@@ -84,9 +86,18 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Basic Structure | L-M | 3hrs| hrs | hrs |
+| Base Styling | L-M | 3hrs| hrs | hrs |
+| Game Logic | H | 6hrs| hrs | hrs |
+| Game Design (visual) | H | 6hrs| hrs | hrs |
+| Leaderboard | M | 4hrs| hrs | hrs |
+| How-to | L | 4hrs| hrs | hrs |
+| Design Tablet | M | 3hrs| hrs | hrs |
+| Design Desktop | M | 3hrs| hrs | hrs |
+| Add Swipe | L-M | 4hrs| hrs | hrs |
+| Add Local Storage | L | 4hrs| hrs | hrs |
+| Add Animations | L | 2hrs| hrs | hrs |
+| Total | H | 43hrs| hrs | hrs |
 
 ## Code Snippet
 
