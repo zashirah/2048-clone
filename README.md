@@ -43,15 +43,18 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### MVP 
 *These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Built a funcitonal 2048 game
+- The game will know when the user wins (2048 tile shows up)
+- The game will know when the user loses (no more moves)
+- The game will end and ask the user for the username. Those will be stored and the top 10 scores will show in the leaderboard component. 
+- Basic styling. Will worry about cleaning transitions with post-MVP
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Use local storage to hold the username
+- Add mobile swipe functionality
+- Add CSS animations
 
 ## Project Schedule
 
@@ -63,10 +66,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---|
 |July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
 |July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
+|July 13| Core components && work on game login | Incomplete
+|July 14| Finalize game logic | Incomplete
+|July 15| Build out game visually (using login from above) && Finalize MVP | Incomplete
+|July 16| Add post MVP | Incomplete
 |July 17| Presentations | Incomplete
 
 ## Priority Matrix
