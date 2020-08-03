@@ -239,19 +239,13 @@ function PlayingSurface() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col flex-no-wrap items-center">
       <button onClick={() => runUps()}>Up</button>
       <button onClick={() => runDowns()}>Down</button>
       <button onClick={() => runLefts()}>Left</button>
       <button onClick={() => runRights()}>Right</button>
       <div
-        style={{
-          width: "200px",
-          height: "200px",
-          backgroundColor: "#a1a1a1",
-          display: "flex",
-          flexFlow: "row wrap",
-        }}
+        className="w-64 bg-gray-400 flex flex-row flex-wrap rounded-lg"
       >
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />

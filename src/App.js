@@ -10,6 +10,7 @@ import Button from "./Button";
 import HighScore from "./HighScore";
 import Leaderboard from "./Leaderboard";
 import HowTo from "./HowTo";
+import TitleSmall from "./TitleSmall"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         </div>
       </Route>
       <Route path="/play">
+        <TitleSmall />
         <PlayingSurface />
       </Route>
       <Route path="/leaderboard">
