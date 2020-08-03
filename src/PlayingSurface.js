@@ -22,8 +22,10 @@ function PlayingSurface() {
   const [tileValue33, updateTileValue33] = useState(2);
 
   useEffect(() => {
+    let number = '00'
     const stateArray = [
-      tileValue00,
+      parseInt(`tileValue${number}`),
+      // tileValue00,
       tileValue01,
       tileValue02,
       tileValue03,
@@ -43,17 +45,8 @@ function PlayingSurface() {
     const empties =
       stateArray.length -
       stateArray.filter((element) => element !== null).length;
-    const randInt = Math.floor(Math.random() * empties) + 1;
+    const randInt = Math.floor(Math.random() * empties);
     console.log(randInt);
-    let i = 0
-    while (i <= randInt) {
-      if (i === randInt) {
-
-      }
-      if (tileValue00) {
-        i++
-      } 
-    }
   }, [
     tileValue00,
     tileValue01,
