@@ -22,10 +22,8 @@ function PlayingSurface() {
   const [tileValue33, updateTileValue33] = useState(2);
 
   useEffect(() => {
-    let number = '00'
     const stateArray = [
-      parseInt(`tileValue${number}`),
-      // tileValue00,
+      tileValue00,
       tileValue01,
       tileValue02,
       tileValue03,
