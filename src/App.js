@@ -11,6 +11,7 @@ import HighScore from "./HighScore";
 import Leaderboard from "./Leaderboard";
 import HowTo from "./HowTo";
 import TitleSmall from "./TitleSmall"
+import HighScoreSmall from './HighScoreSmall'
 
 function App() {
   return (
@@ -31,7 +32,11 @@ function App() {
         </div>
       </Route>
       <Route path="/play">
-        <TitleSmall />
+        <div className="flex flex-row flex-no-wrap justify-around">
+          <TitleSmall />
+          <HighScoreSmall />
+          <HighScoreSmall />
+        </div>
         <PlayingSurface />
       </Route>
       <Route path="/leaderboard">
