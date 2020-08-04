@@ -4,7 +4,7 @@
 
 ## Project Description
 
-2018-clone is the classic 2048 game. You move the tiles by swiping left, right, up, or down. If a tile is next to a tile of equal value and the user "swipes" in that same direction, the tiles are combined and the value is doubled. The game ends when you double the tile values enough times that you get to the 2048 tile. The game ends when you have no more moves. This happens when every tile is full and no tile has an adjascent tile of the same value. The project will be built using React Hooks with airtable as a backend to hold scores. 
+2048-clone is the classic 2048 game. You move the tiles by swiping left, right, up, or down. If a tile is next to a tile of equal value and the user "swipes" in that same direction, the tiles are combined and the value is doubled. The game ends when you double the tile values enough times that you get to the 2048 tile. The game ends when you have no more moves. This happens when every tile is full and no tile has an adjascent tile of the same value. The project will be built using React Hooks with airtable as a backend to hold scores. 
 
 ## API and Data Sample
 
