@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./PlayingSurface.css";
-import moveTiles from "./moveTiles";
+import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
 
 function PlayingSurface() {
@@ -46,94 +46,51 @@ function PlayingSurface() {
       stateArray.length -
       stateArray.filter((element) => element !== null).length;
     const randInt = Math.floor(Math.random() * empties);
-    console.log("start");
     const rand2Or4 = Math.floor(Math.random() * 2 + 1) * 2;
-    // console.log(rand2Or4);
     let i = 0;
     if (!tileValue00 && i <= randInt) {
-      console.log(0);
-      console.log(tileValue00);
-      console.log(randInt);
-      console.log(i);
-      console.log(randInt === i);
       if (i === randInt) {
         updateTileValue00(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue01 && i <= randInt) {
-      console.log(1);
-      console.log(tileValue01);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue01(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue02 && i <= randInt) {
-      console.log(2);
-      console.log(tileValue02);
-      console.log(randInt);
-      console.log(i);
-      console.log(i === randInt);
       if (i === randInt) {
         updateTileValue02(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue03 && i <= randInt) {
-      console.log(3);
-      console.log(tileValue03);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue03(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue10 && i <= randInt) {
-      console.log(4);
-      console.log(tileValue10);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue10(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue11 && i <= randInt) {
-      console.log(5);
-      console.log(tileValue11);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue11(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue12 && i <= randInt) {
-      console.log(6);
-      console.log(tileValue12);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue12(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue13 && i <= randInt) {
-      console.log(7);
-      console.log(tileValue13);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue13(rand2Or4);
         // return;
@@ -141,94 +98,53 @@ function PlayingSurface() {
       i++;
     }
     if (!tileValue20 && i <= randInt) {
-      console.log(8);
-      console.log(tileValue20);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue20(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue21 && i <= randInt) {
-      console.log(9);
-      console.log(tileValue21);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue21(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue22 && i <= randInt) {
-      console.log(10);
-      console.log(tileValue22);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue22(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue23 && i <= randInt) {
-      console.log(11);
-      console.log(tileValue23);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue23(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue30 && i <= randInt) {
-      console.log(12);
-      console.log(tileValue30);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue30(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue31 && i <= randInt) {
-      console.log(13);
-      console.log(tileValue31);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue31(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue32 && i <= randInt) {
-      console.log(14);
-      console.log(tileValue32);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue32(rand2Or4);
-        // return;
       }
       i++;
     }
     if (!tileValue33 && i <= randInt) {
-      console.log(15);
-      console.log(tileValue33);
-      console.log(randInt);
-      console.log(i);
       if (i === randInt) {
         updateTileValue33(rand2Or4);
-        // return;
       }
       i++;
     }
-  console.log('over')
   }, [move]);
 
   const runUps = () => {
