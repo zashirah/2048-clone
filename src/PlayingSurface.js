@@ -23,7 +23,6 @@ function PlayingSurface() {
   const [tileValue33, updateTileValue33] = useState(null);
 
   const [move, setMove] = useState(false);
-  const [anyChange, updateAnyChange] = useState(0);
 
   const [score, updateScore] = useState(0);
 
@@ -44,7 +43,6 @@ function PlayingSurface() {
       updateTileValue20,
       updateTileValue30,
       updateScore,
-      // updateAnyChange
     );
     const check2 = moveTiles(
       tileValue01,
@@ -56,7 +54,6 @@ function PlayingSurface() {
       updateTileValue21,
       updateTileValue31,
       updateScore
-      // updateAnyChange
     );
     const check3 = moveTiles(
       tileValue02,
@@ -68,7 +65,6 @@ function PlayingSurface() {
       updateTileValue22,
       updateTileValue32,
       updateScore
-      // updateAnyChange
     );
     const check4 = moveTiles(
       tileValue03,
@@ -80,10 +76,7 @@ function PlayingSurface() {
       updateTileValue23,
       updateTileValue33,
       updateScore
-      // updateAnyChange
     );
-    console.log(check1, check2, check3, check4)
-    // anyChange > 0 && setMove(!move);
     if (
       check1 !== "no-move" ||
       check2 !== "no-move" ||
@@ -92,7 +85,6 @@ function PlayingSurface() {
     ) {
       setMove(!move);
     }
-    // updateAnyChange(0);
   }, [moveUp]);
 
   // move down
@@ -107,7 +99,6 @@ function PlayingSurface() {
       updateTileValue10,
       updateTileValue00,
       updateScore
-      // updateAnyChange
     );
     const check2 = moveTiles(
       tileValue31,
@@ -119,7 +110,6 @@ function PlayingSurface() {
       updateTileValue11,
       updateTileValue01,
       updateScore
-      // updateAnyChange
     );
     const check3 = moveTiles(
       tileValue32,
@@ -131,7 +121,6 @@ function PlayingSurface() {
       updateTileValue12,
       updateTileValue02,
       updateScore
-      // updateAnyChange
     );
     const check4 = moveTiles(
       tileValue33,
@@ -143,9 +132,7 @@ function PlayingSurface() {
       updateTileValue13,
       updateTileValue03,
       updateScore
-      // updateAnyChange
     );
-    // anyChange > 0 && setMove(!move);
     if (
       check1 !== "no-move" ||
       check2 !== "no-move" ||
@@ -154,7 +141,6 @@ function PlayingSurface() {
     ) {
       setMove(!move);
     }
-    // updateAnyChange(0);
   }, [moveDown]);
 
   // move left
@@ -169,7 +155,6 @@ function PlayingSurface() {
       updateTileValue12,
       updateTileValue13,
       updateScore
-      // updateAnyChange
     );
     const check2 = moveTiles(
       tileValue00,
@@ -181,7 +166,6 @@ function PlayingSurface() {
       updateTileValue02,
       updateTileValue03,
       updateScore
-      // updateAnyChange
     );
     const check3 = moveTiles(
       tileValue20,
@@ -193,7 +177,6 @@ function PlayingSurface() {
       updateTileValue22,
       updateTileValue23,
       updateScore
-      // updateAnyChange
     );
     const check4 = moveTiles(
       tileValue30,
@@ -205,9 +188,7 @@ function PlayingSurface() {
       updateTileValue32,
       updateTileValue33,
       updateScore
-      // updateAnyChange
     );
-    // anyChange > 0 && setMove(!move);
     if (
       check1 !== "no-move" ||
       check2 !== "no-move" ||
@@ -216,7 +197,6 @@ function PlayingSurface() {
     ) {
       setMove(!move);
     }
-    // updateAnyChange(0);
   }, [moveLeft]);
 
   // move right
@@ -231,7 +211,6 @@ function PlayingSurface() {
       updateTileValue11,
       updateTileValue10,
       updateScore
-      // updateAnyChange
     );
     const check2 = moveTiles(
       tileValue03,
@@ -243,7 +222,6 @@ function PlayingSurface() {
       updateTileValue01,
       updateTileValue00,
       updateScore
-      // updateAnyChange
     );
     const check3 = moveTiles(
       tileValue23,
@@ -255,7 +233,6 @@ function PlayingSurface() {
       updateTileValue21,
       updateTileValue20,
       updateScore
-      // updateAnyChange
     );
     const check4 = moveTiles(
       tileValue33,
@@ -267,9 +244,7 @@ function PlayingSurface() {
       updateTileValue31,
       updateTileValue30,
       updateScore
-      // updateAnyChange
     );
-    // anyChange > 0 && setMove(!move);
     if (
       check1 !== "no-move" ||
       check2 !== "no-move" ||
@@ -278,7 +253,6 @@ function PlayingSurface() {
     ) {
       setMove(!move);
     }
-    // updateAnyChange(0)
   }, [moveRight]);
 
   useEffect(() => {
