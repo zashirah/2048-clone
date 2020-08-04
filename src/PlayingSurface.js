@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./PlayingSurface.css";
 import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
+import HighScoreSmall from "./HighScoreSmall";
 
 function PlayingSurface() {
   const [tileValue00, updateTileValue00] = useState(null);
@@ -22,6 +23,8 @@ function PlayingSurface() {
   const [tileValue33, updateTileValue33] = useState(null);
 
   const [move, setMove] = useState(false)
+
+  const [score, updateScore] = useState(0)
 
   useEffect(() => {
     const stateArray = [
@@ -156,7 +159,8 @@ function PlayingSurface() {
       updateTileValue00,
       updateTileValue10,
       updateTileValue20,
-      updateTileValue30
+      updateTileValue30,
+      updateScore
     );
     moveTiles(
       tileValue01,
@@ -166,7 +170,8 @@ function PlayingSurface() {
       updateTileValue01,
       updateTileValue11,
       updateTileValue21,
-      updateTileValue31
+      updateTileValue31,
+      updateScore
     );
     moveTiles(
       tileValue02,
@@ -176,7 +181,8 @@ function PlayingSurface() {
       updateTileValue02,
       updateTileValue12,
       updateTileValue22,
-      updateTileValue32
+      updateTileValue32,
+      updateScore
     );
     moveTiles(
       tileValue03,
@@ -186,7 +192,8 @@ function PlayingSurface() {
       updateTileValue03,
       updateTileValue13,
       updateTileValue23,
-      updateTileValue33
+      updateTileValue33,
+      updateScore
     );
     setMove(!move)
   };
@@ -200,7 +207,8 @@ function PlayingSurface() {
       updateTileValue30,
       updateTileValue20,
       updateTileValue10,
-      updateTileValue00
+      updateTileValue00,
+      updateScore
     );
     moveTiles(
       tileValue31,
@@ -210,7 +218,8 @@ function PlayingSurface() {
       updateTileValue31,
       updateTileValue21,
       updateTileValue11,
-      updateTileValue01
+      updateTileValue01,
+      updateScore
     );
     moveTiles(
       tileValue32,
@@ -220,7 +229,8 @@ function PlayingSurface() {
       updateTileValue32,
       updateTileValue22,
       updateTileValue12,
-      updateTileValue02
+      updateTileValue02,
+      updateScore
     );
     moveTiles(
       tileValue33,
@@ -230,7 +240,8 @@ function PlayingSurface() {
       updateTileValue33,
       updateTileValue23,
       updateTileValue13,
-      updateTileValue03
+      updateTileValue03,
+      updateScore
     );
     setMove(!move);
   };
@@ -244,7 +255,8 @@ function PlayingSurface() {
       updateTileValue10,
       updateTileValue11,
       updateTileValue12,
-      updateTileValue13
+      updateTileValue13,
+      updateScore
     );
     moveTiles(
       tileValue00,
@@ -254,7 +266,8 @@ function PlayingSurface() {
       updateTileValue00,
       updateTileValue01,
       updateTileValue02,
-      updateTileValue03
+      updateTileValue03,
+      updateScore
     );
     moveTiles(
       tileValue20,
@@ -264,7 +277,8 @@ function PlayingSurface() {
       updateTileValue20,
       updateTileValue21,
       updateTileValue22,
-      updateTileValue23
+      updateTileValue23,
+      updateScore
     );
     moveTiles(
       tileValue30,
@@ -274,7 +288,8 @@ function PlayingSurface() {
       updateTileValue30,
       updateTileValue31,
       updateTileValue32,
-      updateTileValue33
+      updateTileValue33,
+      updateScore
     );
     setMove(!move);
   };
@@ -288,7 +303,8 @@ function PlayingSurface() {
       updateTileValue13,
       updateTileValue12,
       updateTileValue11,
-      updateTileValue10
+      updateTileValue10,
+      updateScore
     );
     moveTiles(
       tileValue03,
@@ -298,7 +314,8 @@ function PlayingSurface() {
       updateTileValue03,
       updateTileValue02,
       updateTileValue01,
-      updateTileValue00
+      updateTileValue00,
+      updateScore
     );
     moveTiles(
       tileValue23,
@@ -308,7 +325,8 @@ function PlayingSurface() {
       updateTileValue23,
       updateTileValue22,
       updateTileValue21,
-      updateTileValue20
+      updateTileValue20,
+      updateScore
     );
     moveTiles(
       tileValue33,
@@ -318,13 +336,15 @@ function PlayingSurface() {
       updateTileValue33,
       updateTileValue32,
       updateTileValue31,
-      updateTileValue30
+      updateTileValue30,
+      updateScore
     );
     setMove(!move);
   };
 
   return (
     <div className="flex flex-col flex-no-wrap items-center">
+      <HighScoreSmall score={score}/>
       <button onClick={() => runUps()}>Up</button>
       <button onClick={() => runDowns()}>Down</button>
       <button onClick={() => runLefts()}>Left</button>

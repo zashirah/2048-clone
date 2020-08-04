@@ -92,8 +92,8 @@ function PlayingSurface() {
       tileValue10,
       tileValue20,
       tileValue30,
-      // updateTileValue00,
-      setTileValues(prevState => ({...prevState, tileValue00: })),
+      updateTileValue00,
+      // setTileValues(prevState => ({...prevState, tileValue00: })),
       updateTileValue10,
       updateTileValue20,
       updateTileValue30
