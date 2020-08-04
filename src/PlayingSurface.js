@@ -22,9 +22,242 @@ function PlayingSurface() {
   const [tileValue32, updateTileValue32] = useState(null);
   const [tileValue33, updateTileValue33] = useState(null);
 
-  const [move, setMove] = useState(false)
+  const [move, setMove] = useState(false);
 
-  const [score, updateScore] = useState(0)
+  const [score, updateScore] = useState(0);
+
+  const [moveUp, updateMoveUp] = useState(false);
+  const [moveDown, updateMoveDown] = useState(false);
+  const [moveLeft, updateMoveLeft] = useState(false);
+  const [moveRight, updateMoveRight] = useState(false);
+
+  // move up
+  useEffect(() => {
+    moveTiles(
+      tileValue00,
+      tileValue10,
+      tileValue20,
+      tileValue30,
+      updateTileValue00,
+      updateTileValue10,
+      updateTileValue20,
+      updateTileValue30,
+      updateScore
+    );
+    moveTiles(
+      tileValue01,
+      tileValue11,
+      tileValue21,
+      tileValue31,
+      updateTileValue01,
+      updateTileValue11,
+      updateTileValue21,
+      updateTileValue31,
+      updateScore
+    );
+    moveTiles(
+      tileValue02,
+      tileValue12,
+      tileValue22,
+      tileValue32,
+      updateTileValue02,
+      updateTileValue12,
+      updateTileValue22,
+      updateTileValue32,
+      updateScore
+    );
+    moveTiles(
+      tileValue03,
+      tileValue13,
+      tileValue23,
+      tileValue33,
+      updateTileValue03,
+      updateTileValue13,
+      updateTileValue23,
+      updateTileValue33,
+      updateScore
+    );
+    setMove(!move);
+  }, [moveUp]);
+
+  useEffect(() => {
+    moveTiles(
+      tileValue30,
+      tileValue20,
+      tileValue10,
+      tileValue00,
+      updateTileValue30,
+      updateTileValue20,
+      updateTileValue10,
+      updateTileValue00,
+      updateScore
+    );
+    moveTiles(
+      tileValue31,
+      tileValue21,
+      tileValue11,
+      tileValue01,
+      updateTileValue31,
+      updateTileValue21,
+      updateTileValue11,
+      updateTileValue01,
+      updateScore
+    );
+    moveTiles(
+      tileValue32,
+      tileValue22,
+      tileValue12,
+      tileValue02,
+      updateTileValue32,
+      updateTileValue22,
+      updateTileValue12,
+      updateTileValue02,
+      updateScore
+    );
+    moveTiles(
+      tileValue33,
+      tileValue23,
+      tileValue13,
+      tileValue03,
+      updateTileValue33,
+      updateTileValue23,
+      updateTileValue13,
+      updateTileValue03,
+      updateScore
+    );
+    setMove(!move);
+  }, [moveDown]);
+
+  useEffect(() => {
+    moveTiles(
+      tileValue10,
+      tileValue11,
+      tileValue12,
+      tileValue13,
+      updateTileValue10,
+      updateTileValue11,
+      updateTileValue12,
+      updateTileValue13,
+      updateScore
+    );
+    moveTiles(
+      tileValue00,
+      tileValue01,
+      tileValue02,
+      tileValue03,
+      updateTileValue00,
+      updateTileValue01,
+      updateTileValue02,
+      updateTileValue03,
+      updateScore
+    );
+    moveTiles(
+      tileValue20,
+      tileValue21,
+      tileValue22,
+      tileValue23,
+      updateTileValue20,
+      updateTileValue21,
+      updateTileValue22,
+      updateTileValue23,
+      updateScore
+    );
+    moveTiles(
+      tileValue30,
+      tileValue31,
+      tileValue32,
+      tileValue33,
+      updateTileValue30,
+      updateTileValue31,
+      updateTileValue32,
+      updateTileValue33,
+      updateScore
+    );
+    setMove(!move);
+  }, [moveLeft]);
+
+  useEffect(() => {
+    moveTiles(
+      tileValue13,
+      tileValue12,
+      tileValue11,
+      tileValue10,
+      updateTileValue13,
+      updateTileValue12,
+      updateTileValue11,
+      updateTileValue10,
+      updateScore
+    );
+    moveTiles(
+      tileValue03,
+      tileValue02,
+      tileValue01,
+      tileValue00,
+      updateTileValue03,
+      updateTileValue02,
+      updateTileValue01,
+      updateTileValue00,
+      updateScore
+    );
+    moveTiles(
+      tileValue23,
+      tileValue22,
+      tileValue21,
+      tileValue20,
+      updateTileValue23,
+      updateTileValue22,
+      updateTileValue21,
+      updateTileValue20,
+      updateScore
+    );
+    moveTiles(
+      tileValue33,
+      tileValue32,
+      tileValue31,
+      tileValue30,
+      updateTileValue33,
+      updateTileValue32,
+      updateTileValue31,
+      updateTileValue30,
+      updateScore
+    );
+    setMove(!move);
+  }, [moveRight]);
+
+  useEffect(() => {
+    const leftListener = (e) => {
+      if (e.key === "ArrowLeft") {
+        updateMoveLeft((prevState) => !prevState);
+      }
+    };
+    const rightListener = (e) => {
+      if (e.key === "ArrowRight") {
+        updateMoveRight((prevState) => !prevState);
+      }
+    };
+    const upListener = (e) => {
+      if (e.key === "ArrowUp") {
+        updateMoveUp((prevState) => !prevState);
+      }
+    };
+    const downListener = (e) => {
+      if (e.key === "ArrowDown") {
+        updateMoveDown((prevState) => !prevState);
+      }
+    };
+
+    window.addEventListener("keydown", leftListener);
+    window.addEventListener("keydown", rightListener);
+    window.addEventListener("keydown", upListener);
+    window.addEventListener("keydown", downListener);
+
+    return () => {
+      window.removeEventListener("keydown", leftListener);
+      window.removeEventListener("keydown", rightListener);
+      window.removeEventListener("keydown", upListener);
+      window.removeEventListener("keydown", downListener);
+    };
+  }, []);
 
   useEffect(() => {
     const stateArray = [
@@ -150,205 +383,34 @@ function PlayingSurface() {
     }
   }, [move]);
 
-  const runUps = () => {
-    moveTiles(
-      tileValue00,
-      tileValue10,
-      tileValue20,
-      tileValue30,
-      updateTileValue00,
-      updateTileValue10,
-      updateTileValue20,
-      updateTileValue30,
-      updateScore
-    );
-    moveTiles(
-      tileValue01,
-      tileValue11,
-      tileValue21,
-      tileValue31,
-      updateTileValue01,
-      updateTileValue11,
-      updateTileValue21,
-      updateTileValue31,
-      updateScore
-    );
-    moveTiles(
-      tileValue02,
-      tileValue12,
-      tileValue22,
-      tileValue32,
-      updateTileValue02,
-      updateTileValue12,
-      updateTileValue22,
-      updateTileValue32,
-      updateScore
-    );
-    moveTiles(
-      tileValue03,
-      tileValue13,
-      tileValue23,
-      tileValue33,
-      updateTileValue03,
-      updateTileValue13,
-      updateTileValue23,
-      updateTileValue33,
-      updateScore
-    );
-    setMove(!move)
-  };
-
-  const runDowns = () => {
-    moveTiles(
-      tileValue30,
-      tileValue20,
-      tileValue10,
-      tileValue00,
-      updateTileValue30,
-      updateTileValue20,
-      updateTileValue10,
-      updateTileValue00,
-      updateScore
-    );
-    moveTiles(
-      tileValue31,
-      tileValue21,
-      tileValue11,
-      tileValue01,
-      updateTileValue31,
-      updateTileValue21,
-      updateTileValue11,
-      updateTileValue01,
-      updateScore
-    );
-    moveTiles(
-      tileValue32,
-      tileValue22,
-      tileValue12,
-      tileValue02,
-      updateTileValue32,
-      updateTileValue22,
-      updateTileValue12,
-      updateTileValue02,
-      updateScore
-    );
-    moveTiles(
-      tileValue33,
-      tileValue23,
-      tileValue13,
-      tileValue03,
-      updateTileValue33,
-      updateTileValue23,
-      updateTileValue13,
-      updateTileValue03,
-      updateScore
-    );
-    setMove(!move);
-  };
-
-  const runLefts = () => {
-    moveTiles(
-      tileValue10,
-      tileValue11,
-      tileValue12,
-      tileValue13,
-      updateTileValue10,
-      updateTileValue11,
-      updateTileValue12,
-      updateTileValue13,
-      updateScore
-    );
-    moveTiles(
-      tileValue00,
-      tileValue01,
-      tileValue02,
-      tileValue03,
-      updateTileValue00,
-      updateTileValue01,
-      updateTileValue02,
-      updateTileValue03,
-      updateScore
-    );
-    moveTiles(
-      tileValue20,
-      tileValue21,
-      tileValue22,
-      tileValue23,
-      updateTileValue20,
-      updateTileValue21,
-      updateTileValue22,
-      updateTileValue23,
-      updateScore
-    );
-    moveTiles(
-      tileValue30,
-      tileValue31,
-      tileValue32,
-      tileValue33,
-      updateTileValue30,
-      updateTileValue31,
-      updateTileValue32,
-      updateTileValue33,
-      updateScore
-    );
-    setMove(!move);
-  };
-
-  const runRights = () => {
-    moveTiles(
-      tileValue13,
-      tileValue12,
-      tileValue11,
-      tileValue10,
-      updateTileValue13,
-      updateTileValue12,
-      updateTileValue11,
-      updateTileValue10,
-      updateScore
-    );
-    moveTiles(
-      tileValue03,
-      tileValue02,
-      tileValue01,
-      tileValue00,
-      updateTileValue03,
-      updateTileValue02,
-      updateTileValue01,
-      updateTileValue00,
-      updateScore
-    );
-    moveTiles(
-      tileValue23,
-      tileValue22,
-      tileValue21,
-      tileValue20,
-      updateTileValue23,
-      updateTileValue22,
-      updateTileValue21,
-      updateTileValue20,
-      updateScore
-    );
-    moveTiles(
-      tileValue33,
-      tileValue32,
-      tileValue31,
-      tileValue30,
-      updateTileValue33,
-      updateTileValue32,
-      updateTileValue31,
-      updateTileValue30,
-      updateScore
-    );
-    setMove(!move);
-  };
-
   return (
     <div className="flex flex-col flex-no-wrap items-center">
-      <HighScoreSmall score={score}/>
-      <button onClick={() => runUps()}>Up</button>
-      <button onClick={() => runDowns()}>Down</button>
-      <button onClick={() => runLefts()}>Left</button>
-      <button onClick={() => runRights()}>Right</button>
+      <HighScoreSmall score={score} />
+      {/* <button
+      // onClick={() => runUps()}
+      // onKeyDown={(e) => e.key === "ArrowUp" && runUps()}
+      // onKeyDown={(e) => console.log(e.key)}
+      >
+        Up
+      </button>
+      <button
+      // onClick={() => runDowns()}
+      // onKeyDown={(e) => e.key === "ArrowDown" && runDowns()}
+      >
+        Down
+      </button>
+      <button
+      // onClick={() => runLefts()}
+      // onKeyDown={(e) => e.key === "ArrowLeft" && runLefts()}
+      >
+        Left
+      </button>
+      <button
+      // onClick={() => runRights()}
+      // onKeyDown={(e) => e.key === "ArrowRight" && runRights()}
+      >
+        Right
+      </button> */}
       <div className="w-64 bg-gray-400 flex flex-row flex-wrap rounded-lg">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
