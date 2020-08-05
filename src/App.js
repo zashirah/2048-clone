@@ -13,6 +13,7 @@ import HowTo from "./HowTo";
 import TitleSmall from "./TitleSmall";
 import HighScoreSmall from "./HighScoreSmall";
 import Axios from "axios";
+import CurrentScore from "./CurrentScore";
 
 function App() {
   const [leaderboardData, updateLeaderboardData] = useState([]);
@@ -61,13 +62,13 @@ function App() {
         <div className="w-screen  h-screen flex flex-col flex-no-wrap items-center sm:justify-around md:justify-evenly mb-2">
           <Title />
           <div className="flex flex-row flex-no-wrap m-4 justify-around">
-            <div className="hidden md:flex md:flex-col md:flex-no-wrap md:w-1/2 md:border md:border-blue-800 md:rounded-lg md:bg-blue-300 md:bg-opacity-75 md:p-4 lg:w-1/3">
+            <div className="hidden md:flex md:flex-col md:flex-no-wrap md:w-1/2 md:p-4 lg:w-1/3">
               <h2 className="text-center text-4xl font-bold">Leaderboard</h2>
               <Leaderboard data={leaderboardData} />
             </div>
             {/* <HighScoreSmall />
           <HighScoreSmall /> */}
-            <div className="flex flex-col flex-no-wrap items-center justify-around">
+            <div className="flex flex-col flex-no-wrap items-center sm:justify-around lg:justify-start">
               <PlayingSurface />
               <HighScore
                 highScore={highScore}

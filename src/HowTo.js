@@ -3,15 +3,16 @@ import React from 'react'
 function HowTo() {
   return (
     <div>
+      <h1 className="font-bold text-3xl text-center pb-4">Intructions</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Use the arrow keys (on desktop) or swipe (on mobile) to move the tiles.
+        When two tiles with the same number touch, they merge into one tile.
       </p>
+      <br />
+      <p>
+        The goal of the game is to merge tiles until you get to the 2048 tile.
+      </p>
+      <img src="src/images/HowTo-Picture1.jpg" alt="How to play 2048" />
     </div>
   );
 }
