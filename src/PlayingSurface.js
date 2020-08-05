@@ -5,6 +5,7 @@ import Tile from "./Tile.js";
 import Axios from "axios";
 import CurrentScore from "./CurrentScore";
 import { useSwipeable, Swipeable } from "react-swipeable";
+import { useHistory } from "react-router-dom"
 
 function PlayingSurface() {
   const [tileValue00, updateTileValue00] = useState(null);
@@ -480,6 +481,8 @@ function PlayingSurface() {
   const date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
+  let history = useHistory()
+  
   const updateLeaderboard = async (e, date) => {
     e.preventDefault();
     await Axios.post(
@@ -498,7 +501,8 @@ function PlayingSurface() {
         },
       }
     );
-    // history.pushState('/')
+    setGameOver(false)
+    history.push('/')
   };
 
   const handlers = useSwipeable({
