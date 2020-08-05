@@ -2,7 +2,7 @@ import React from "react";
 
 function Leaderboard({ data }) {
   return (
-    <div className="mt-4">
+    <div>
       <table className="table-auto">
         <thead>
           <tr>

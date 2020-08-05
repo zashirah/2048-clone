@@ -62,24 +62,25 @@ function App() {
         </div>
       </Route>
       <Route path="/play">
-        <div className="flex flex-row flex-no-wrap justify-around">
+        <div className="w-screen h-screen flex flex-col flex-no-wrap items-center justify-around mb-2">
           <Title />
           {/* <HighScoreSmall />
           <HighScoreSmall /> */}
+          <PlayingSurface />
+          <HighScore
+            highScore={highScore}
+            highScoreUsername={highScoreUsername}
+          />
         </div>
-        <PlayingSurface
-          highScore={highScore}
-          highScoreUsername={highScoreUsername}
-        />
       </Route>
       <Route path="/leaderboard">
-        <div className="flex flex-col flex-no-wrap justify-center items-center">
+        <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-4 mb-2">
           <Title />
           <Leaderboard data={leaderboardData} />
         </div>
       </Route>
       <Route path="/how-to">
-        <div className="flex flex-col flex-no-wrap justify-center items-center">
+        <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-4 mb-2">
           <Title />
           <HowTo />
         </div>

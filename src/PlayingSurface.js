@@ -7,7 +7,7 @@ import Button from "./Button";
 import { Route, Link } from "react-router-dom";
 import Axios from "axios";
 
-function PlayingSurface( { highScore, highScoreUsername } ) {
+function PlayingSurface() {
   const [tileValue00, updateTileValue00] = useState(null);
   const [tileValue01, updateTileValue01] = useState(null);
   const [tileValue02, updateTileValue02] = useState(null);
@@ -519,7 +519,7 @@ function PlayingSurface( { highScore, highScoreUsername } ) {
   };
 
   return (
-    <div className="flex flex-col flex-no-wrap items-center">
+    <div className="flex flex-col flex-no-wrap items-center justify-between">
       <div className="w-64 h-64 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
@@ -538,7 +538,7 @@ function PlayingSurface( { highScore, highScoreUsername } ) {
         <Tile tileValue={tileValue32} />
         <Tile tileValue={tileValue33} />
       </div>
-      <HighScore highScore={highScore} highScoreUsername={highScoreUsername}/>
+      {/* <HighScore highScore={highScore} highScoreUsername={highScoreUsername} /> */}
       {/* <Button hidden={!gameOver && "hidden"} buttonText="Game Over" /> */}
       <div className={!gameOver ? "hidden" : ""}>
         {/* <div> */}
