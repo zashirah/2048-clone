@@ -99,7 +99,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      setMove((m) => !m);
+      // setMove(!move);
     }
   }, [moveUp]);
 
@@ -155,7 +156,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      setMove((m) => !m);
+      // setMove(!move);
     }
   }, [moveDown]);
 
@@ -211,7 +213,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      // setMove(!move);
+      setMove(m => !m)
     }
   }, [moveLeft]);
 
@@ -267,7 +270,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      setMove((m) => !m);
+      // setMove(!move);
     }
   }, [moveRight]);
 
