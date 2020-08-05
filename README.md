@@ -15,7 +15,7 @@ The only data I will collect is username and score.
 ## Wireframes
 
 Mobile Home:
-![Mobile Home Wireframe](.images/home-page-mobile-wireframe.png)
+![Mobile Home Wireframe](images/home-page-mobile-wireframe.png)
 
 Mobile Playing:
 ![Mobile Playing Wireframe](.images/playing-page-mobile-wireframe.png)
