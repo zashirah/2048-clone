@@ -9,10 +9,7 @@ import Button from "./Button";
 import HighScore from "./HighScore";
 import Leaderboard from "./Leaderboard";
 import HowTo from "./HowTo";
-import TitleSmall from "./TitleSmall";
-import HighScoreSmall from "./HighScoreSmall";
 import Axios from "axios";
-import CurrentScore from "./CurrentScore";
 
 function App() {
   const [leaderboardData, updateLeaderboardData] = useState([]);
@@ -39,59 +36,59 @@ function App() {
 
   return (
     <div className="w-screen h-screen bg-gray-100">
-      <Route path="/" exact>
-        <div className="w-screen h-screen flex flex-col flex-no-wrap items-center justify-around mb-2">
-          <Title />
-          <Link to="/play">
-            <Button buttonText={"New Game"} />
-          </Link>
-          <Link to="/leaderboard">
-            <Button buttonText={"Leaderboard"} />
-          </Link>
-          <Link to="/how-to">
-            <Button buttonText={"How to?"} />
-          </Link>
-          <HighScore
-            highScore={highScore}
-            highScoreUsername={highScoreUsername}
-          />
-        </div>
-      </Route>
-      <Route path="/play">
-        <div className="w-screen  h-screen flex flex-col flex-no-wrap items-center sm:justify-around md:justify-evenly mb-2">
-          <Title />
-          <div className="flex flex-row flex-no-wrap m-4 justify-around">
-            <div className="hidden md:flex md:flex-col md:flex-no-wrap md:w-1/2 md:p-4 lg:w-1/3">
-              <h2 className="text-center text-4xl font-bold">Leaderboard</h2>
-              <Leaderboard data={leaderboardData} />
-            </div>
-            {/* <HighScoreSmall />
-          <HighScoreSmall /> */}
-            <div className="flex flex-col flex-no-wrap items-center sm:justify-around lg:justify-start">
-              <PlayingSurface />
-              <HighScore
-                highScore={highScore}
-                highScoreUsername={highScoreUsername}
-              />
-            </div>
-            <div className="w-1/3 hidden lg:flex p-4">
-              <HowTo />
+      <div className="w-95 h-95 bg-gray-100">
+        <Route path="/" exact>
+          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center justify-evenly my-4">
+            <Title />
+            <Link to="/play">
+              <Button buttonText={"New Game"} />
+            </Link>
+            <Link to="/leaderboard">
+              <Button buttonText={"Leaderboard"} />
+            </Link>
+            <Link to="/how-to">
+              <Button buttonText={"How to?"} />
+            </Link>
+            <HighScore
+              highScore={highScore}
+              highScoreUsername={highScoreUsername}
+            />
+          </div>
+        </Route>
+        <Route path="/play">
+          <div className="w-11/12 h-screen flex flex-col flex-no-wrap items-center sm:justify-around md:justify-evenly mb-2">
+            <Title />
+            <div className="flex flex-row flex-no-wrap m-4 justify-around">
+              <div className="hidden md:flex md:flex-col md:flex-no-wrap md:w-1/2 md:p-4 lg:w-1/3">
+                <h2 className="text-center text-4xl font-bold">Leaderboard</h2>
+                <Leaderboard data={leaderboardData} />
+              </div>
+              <div className="flex flex-col flex-no-wrap items-center sm:justify-around lg:justify-start">
+                <PlayingSurface />
+                <HighScore
+                  highScore={highScore}
+                  highScoreUsername={highScoreUsername}
+                />
+              </div>
+              <div className="w-1/3 hidden lg:flex p-4">
+                <HowTo />
+              </div>
             </div>
           </div>
-        </div>
-      </Route>
-      <Route path="/leaderboard">
-        <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-4 mb-2">
-          <Title />
-          <Leaderboard data={leaderboardData} />
-        </div>
-      </Route>
-      <Route path="/how-to">
-        <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-4 mb-2">
-          <Title />
-          <HowTo />
-        </div>
-      </Route>
+        </Route>
+        <Route path="/leaderboard">
+          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-4 mb-2">
+            <Title />
+            <Leaderboard data={leaderboardData} />
+          </div>
+        </Route>
+        <Route path="/how-to">
+          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-4 mb-2">
+            <Title />
+            <HowTo />
+          </div>
+        </Route>
+      </div>
     </div>
   );
 }
