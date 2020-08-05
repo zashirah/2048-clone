@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./PlayingSurface.css";
 import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
-import HighScore from "./HighScore";
-import Button from "./Button";
-import { Route, Link } from "react-router-dom";
 import Axios from "axios";
 import CurrentScore from "./CurrentScore";
 
@@ -25,22 +22,6 @@ function PlayingSurface() {
   const [tileValue31, updateTileValue31] = useState(null);
   const [tileValue32, updateTileValue32] = useState(null);
   const [tileValue33, updateTileValue33] = useState(null);
-  // const [tileValue00, updateTileValue00] = useState(2);
-  // const [tileValue01, updateTileValue01] = useState(4);
-  // const [tileValue02, updateTileValue02] = useState(8);
-  // const [tileValue03, updateTileValue03] = useState(16);
-  // const [tileValue10, updateTileValue10] = useState(32);
-  // const [tileValue11, updateTileValue11] = useState(64);
-  // const [tileValue12, updateTileValue12] = useState(128);
-  // const [tileValue13, updateTileValue13] = useState(256);
-  // const [tileValue20, updateTileValue20] = useState(512);
-  // const [tileValue21, updateTileValue21] = useState(1024);
-  // const [tileValue22, updateTileValue22] = useState(2048);
-  // const [tileValue23, updateTileValue23] = useState(5096);
-  // const [tileValue30, updateTileValue30] = useState(10192);
-  // const [tileValue31, updateTileValue31] = useState(20384);
-  // const [tileValue32, updateTileValue32] = useState(40768);
-  // const [tileValue33, updateTileValue33] = useState(null);
 
   const [move, setMove] = useState(false);
 
@@ -524,7 +505,7 @@ function PlayingSurface() {
       <div>
         <CurrentScore score={score}/>
       </div>
-      <div className="my-4 w-64 h-64 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
+      <div className="my-4 w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
         <Tile tileValue={tileValue02} />

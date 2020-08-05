@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Link } from "react-router-dom";
 
-import "./App.css";
 import "./tailwind.css";
 
 import PlayingSurface from "./PlayingSurface";
