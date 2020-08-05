@@ -42,7 +42,7 @@ function PlayingSurface() {
       updateTileValue10,
       updateTileValue20,
       updateTileValue30,
-      updateScore,
+      updateScore
     );
     const check2 = moveTiles(
       tileValue01,
@@ -315,6 +315,29 @@ function PlayingSurface() {
     const randInt = Math.floor(Math.random() * empties);
     const rand2Or4 = Math.floor(Math.random() * 2 + 1) * 2;
     let i = 0;
+
+    console.log(empties);
+    if (empties <= 1) {
+      for (let x = 0; x < 4; x++) {
+        for (let y = 0; y < 4; y++) {
+          let currentVar = eval(`tileValue${x}${y}`);
+          let prevY = eval(`tileValue${x}${y - 1}`);
+          let nextY = eval(`tileValue${x}${y + 1}`);
+          let prevX = eval(`tileValue${x - 1}${y}`);
+          let nextX = eval(`tileValue${x + 1}${y}`);
+          if (
+            (prevX && currentVar === prevX) ||
+            (nextX && currentVar === nextX) ||
+            (prevY && currentVar === prevY) ||
+            (nextY && currentVar === nextY)
+          ) {
+            console.log("no moves");
+          }
+        }
+      }
+
+      console.log("game over. you lose");
+    }
     if (!tileValue00 && i <= randInt) {
       if (i === randInt) {
         updateTileValue00(rand2Or4);
@@ -417,31 +440,6 @@ function PlayingSurface() {
   return (
     <div className="flex flex-col flex-no-wrap items-center">
       <HighScoreSmall score={score} />
-      {/* <button
-      // onClick={() => runUps()}
-      // onKeyDown={(e) => e.key === "ArrowUp" && runUps()}
-      // onKeyDown={(e) => console.log(e.key)}
-      >
-        Up
-      </button>
-      <button
-      // onClick={() => runDowns()}
-      // onKeyDown={(e) => e.key === "ArrowDown" && runDowns()}
-      >
-        Down
-      </button>
-      <button
-      // onClick={() => runLefts()}
-      // onKeyDown={(e) => e.key === "ArrowLeft" && runLefts()}
-      >
-        Left
-      </button>
-      <button
-      // onClick={() => runRights()}
-      // onKeyDown={(e) => e.key === "ArrowRight" && runRights()}
-      >
-        Right
-      </button> */}
       <div className="w-64 bg-gray-400 flex flex-row flex-wrap rounded-lg">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
