@@ -38,7 +38,7 @@ function App() {
     <div className="w-screen h-screen bg-gray-100">
       <div className="w-95 h-95 bg-gray-100">
         <Route path="/" exact>
-          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center justify-evenly my-4">
+          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center justify-between">
             <Title />
             <Link to="/play">
               <Button buttonText={"New Game"} />
