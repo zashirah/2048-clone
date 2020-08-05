@@ -68,7 +68,7 @@ function App() {
           </div>
         </Route>
         <Route path="/play">
-          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center sm:justify-around md:justify-evenly mb-2">
+          <div className="w-screen h-screen flex flex-col flex-no-wrap items-center sm:justify-around md:justify-evenly mb-2 pt-8">
             <Title />
             <div className="flex flex-row flex-no-wrap m-4 justify-around">
               <div className="hidden md:flex md:flex-col md:flex-no-wrap md:w-1/2 md:p-4 lg:w-1/3">
