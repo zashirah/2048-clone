@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./PlayingSurface.css";
 import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
-import HighScoreSmall from "./HighScoreSmall";
+import HighScore from "./HighScore";
 import Button from "./Button";
 import { Route, Link } from "react-router-dom";
 import Axios from "axios";
 
-function PlayingSurface() {
+function PlayingSurface( { highScore } ) {
   const [tileValue00, updateTileValue00] = useState(null);
   const [tileValue01, updateTileValue01] = useState(null);
   const [tileValue02, updateTileValue02] = useState(null);
@@ -520,7 +520,6 @@ function PlayingSurface() {
 
   return (
     <div className="flex flex-col flex-no-wrap items-center">
-      <HighScoreSmall score={score} />
       <div className="w-64 h-64 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
@@ -539,34 +538,35 @@ function PlayingSurface() {
         <Tile tileValue={tileValue32} />
         <Tile tileValue={tileValue33} />
       </div>
+      <HighScore highScore={highScore} />
       {/* <Button hidden={!gameOver && "hidden"} buttonText="Game Over" /> */}
       <div className={!gameOver ? "hidden" : ""}>
-      {/* <div> */}
-          <form
-            className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
-            onSubmit={(e) => updateLeaderboard(e, date)}
-          >
-            <div className="p-2">Congrats! Your score was: {score}</div>
-            <label className="p-2" htmlFor="username">
-              Input your Username (4 char max)
-            </label>
-            <input
-              className="text-center"
-              type="text"
-              name="username"
-              id="username"
-              value={username}
-              onChange={(e) => updateUsername(e.target.value.substr(0, 4))}
-            />
-            {/* <div className="p-2">{date}</div> */}
-            <label htmlFor="submitButton"></label>
-            <input
-              className="p-2 m-2 rounded-md shadow-md"
-              type="submit"
-              name="submitButton"
-              id="submitButton"
-            />
-          </form>
+        {/* <div> */}
+        <form
+          className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
+          onSubmit={(e) => updateLeaderboard(e, date)}
+        >
+          <div className="p-2">Congrats! Your score was: {score}</div>
+          <label className="p-2" htmlFor="username">
+            Input your Username (4 char max)
+          </label>
+          <input
+            className="text-center"
+            type="text"
+            name="username"
+            id="username"
+            value={username}
+            onChange={(e) => updateUsername(e.target.value.substr(0, 4))}
+          />
+          {/* <div className="p-2">{date}</div> */}
+          <label htmlFor="submitButton"></label>
+          <input
+            className="p-2 m-2 rounded-md shadow-md"
+            type="submit"
+            name="submitButton"
+            id="submitButton"
+          />
+        </form>
       </div>
     </div>
   );

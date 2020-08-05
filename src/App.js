@@ -18,6 +18,7 @@ import Axios from "axios";
 
 function App() {
   const [leaderboardData, updateLeaderboardData] = useState([])
+  const [highScore, updateHighScore] = useState(0)
 
   useEffect(() => {
     const apiCall = async () => {
@@ -31,11 +32,13 @@ function App() {
       );
       console.log(data.data.records[0].fields.score);
       updateLeaderboardData(data.data.records)
+      updateHighScore(data.data.records[0].fields.score)
       
     };
     apiCall();
   }, []);
 
+  
   return (
     <div className="w-screen h-screen bg-gray-100">
       <Route path="/" exact>
@@ -50,16 +53,16 @@ function App() {
           <Link to="/how-to">
             <Button buttonText={"How to?"} />
           </Link>
-          <HighScore />
+          <HighScore highScore={highScore} />
         </div>
       </Route>
       <Route path="/play">
         <div className="flex flex-row flex-no-wrap justify-around">
-          <TitleSmall />
-          <HighScoreSmall highScore={leaderboardData}/>
-          <HighScoreSmall />
+          <Title />
+          {/* <HighScoreSmall />
+          <HighScoreSmall /> */}
         </div>
-        <PlayingSurface />
+        <PlayingSurface highScore={highScore} />
       </Route>
       <Route path="/leaderboard">
         <div className="flex flex-col flex-no-wrap justify-center items-center">
