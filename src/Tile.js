@@ -43,7 +43,7 @@ function Tile({ tileValue }) {
 
   return (
     <div
-      className={`bg-${color} border border-gray-800 h-16 w-16 rounded-md justify-center items-center  text-gray-900 font-semibold text-lg flex flex-no-wrap`}
+      className={`bg-${color} border border-gray-800 h-12 w-12 m-1 rounded-md justify-center items-center  text-gray-900 font-semibold text-lg flex flex-no-wrap`}
       value={tileValue}
     >
       <p>{tileValue}</p>

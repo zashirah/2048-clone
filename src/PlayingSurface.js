@@ -3,40 +3,43 @@ import "./PlayingSurface.css";
 import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
 import HighScoreSmall from "./HighScoreSmall";
+import Button from "./Button";
+import { Route, Link } from "react-router-dom";
+import Axios from "axios";
 
 function PlayingSurface() {
-  const [tileValue00, updateTileValue00] = useState(null);
-  const [tileValue01, updateTileValue01] = useState(null);
-  const [tileValue02, updateTileValue02] = useState(null);
-  const [tileValue03, updateTileValue03] = useState(null);
-  const [tileValue10, updateTileValue10] = useState(null);
-  const [tileValue11, updateTileValue11] = useState(null);
-  const [tileValue12, updateTileValue12] = useState(null);
-  const [tileValue13, updateTileValue13] = useState(null);
-  const [tileValue20, updateTileValue20] = useState(null);
-  const [tileValue21, updateTileValue21] = useState(null);
-  const [tileValue22, updateTileValue22] = useState(null);
-  const [tileValue23, updateTileValue23] = useState(null);
-  const [tileValue30, updateTileValue30] = useState(null);
-  const [tileValue31, updateTileValue31] = useState(null);
-  const [tileValue32, updateTileValue32] = useState(null);
+  // const [tileValue00, updateTileValue00] = useState(null);
+  // const [tileValue01, updateTileValue01] = useState(null);
+  // const [tileValue02, updateTileValue02] = useState(null);
+  // const [tileValue03, updateTileValue03] = useState(null);
+  // const [tileValue10, updateTileValue10] = useState(null);
+  // const [tileValue11, updateTileValue11] = useState(null);
+  // const [tileValue12, updateTileValue12] = useState(null);
+  // const [tileValue13, updateTileValue13] = useState(null);
+  // const [tileValue20, updateTileValue20] = useState(null);
+  // const [tileValue21, updateTileValue21] = useState(null);
+  // const [tileValue22, updateTileValue22] = useState(null);
+  // const [tileValue23, updateTileValue23] = useState(null);
+  // const [tileValue30, updateTileValue30] = useState(null);
+  // const [tileValue31, updateTileValue31] = useState(null);
+  // const [tileValue32, updateTileValue32] = useState(null);
+  // const [tileValue33, updateTileValue33] = useState(null);
+  const [tileValue00, updateTileValue00] = useState(2);
+  const [tileValue01, updateTileValue01] = useState(4);
+  const [tileValue02, updateTileValue02] = useState(8);
+  const [tileValue03, updateTileValue03] = useState(16);
+  const [tileValue10, updateTileValue10] = useState(32);
+  const [tileValue11, updateTileValue11] = useState(64);
+  const [tileValue12, updateTileValue12] = useState(128);
+  const [tileValue13, updateTileValue13] = useState(256);
+  const [tileValue20, updateTileValue20] = useState(512);
+  const [tileValue21, updateTileValue21] = useState(1024);
+  const [tileValue22, updateTileValue22] = useState(2048);
+  const [tileValue23, updateTileValue23] = useState(5096);
+  const [tileValue30, updateTileValue30] = useState(10192);
+  const [tileValue31, updateTileValue31] = useState(20384);
+  const [tileValue32, updateTileValue32] = useState(40768);
   const [tileValue33, updateTileValue33] = useState(null);
-  //  const [tileValue00, updateTileValue00] = useState(2);
-  //  const [tileValue01, updateTileValue01] = useState(4);
-  //  const [tileValue02, updateTileValue02] = useState(8);
-  //  const [tileValue03, updateTileValue03] = useState(16);
-  //  const [tileValue10, updateTileValue10] = useState(32);
-  //  const [tileValue11, updateTileValue11] = useState(64);
-  //  const [tileValue12, updateTileValue12] = useState(128);
-  //  const [tileValue13, updateTileValue13] = useState(256);
-  //  const [tileValue20, updateTileValue20] = useState(512);
-  //  const [tileValue21, updateTileValue21] = useState(1024);
-  //  const [tileValue22, updateTileValue22] = useState(2048);
-  //  const [tileValue23, updateTileValue23] = useState(5096);
-  //  const [tileValue30, updateTileValue30] = useState(10192);
-  //  const [tileValue31, updateTileValue31] = useState(20384);
-  //  const [tileValue32, updateTileValue32] = useState(40768);
-  //  const [tileValue33, updateTileValue33] = useState(81536);
 
   const [move, setMove] = useState(false);
 
@@ -46,6 +49,11 @@ function PlayingSurface() {
   const [moveDown, updateMoveDown] = useState(false);
   const [moveLeft, updateMoveLeft] = useState(false);
   const [moveRight, updateMoveRight] = useState(false);
+
+  const [checkGameOver, setCheckGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+
+  const [username, updateUsername] = useState("");
 
   // move up
   useEffect(() => {
@@ -99,7 +107,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      // setMove(!move);
+      setMove((m) => !m);
     }
   }, [moveUp]);
 
@@ -155,7 +164,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      // setMove(!move);
+      setMove((m) => !m);
     }
   }, [moveDown]);
 
@@ -211,7 +221,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      // setMove(!move);
+      setMove((m) => !m);
     }
   }, [moveLeft]);
 
@@ -267,7 +278,8 @@ function PlayingSurface() {
       check3 !== "no-move" ||
       check4 !== "no-move"
     ) {
-      setMove(!move);
+      setMove((m) => !m);
+      // setMove(!move);
     }
   }, [moveRight]);
 
@@ -331,62 +343,6 @@ function PlayingSurface() {
     const randInt = Math.floor(Math.random() * empties);
     const rand2Or4 = Math.floor(Math.random() * 2 + 1) * 2;
     let i = 0;
-
-    console.log(empties);
-    if (empties <= 1) {
-      // for (let x = 0; x < 4; x++) {
-      //   for (let y = 0; y < 4; y++) {
-      //     let currentVar = eval(`tileValue${x}${y}`);
-      //     console.log('current var')
-      //     console.log(currentVar)
-
-      //     if (y - 1) >= 0 {
-            
-      //     }
-
-      //     // let prevY = eval(`tileValue${x}${y - 1}`) || false;
-      //     // let nextY = eval(`tileValue${x}${y + 1}`) || false;
-      //     // let prevX = eval(`tileValue${x - 1}${y}`) || false;
-      //     // let nextX = eval(`tileValue${x + 1}${y}`) || false;
-      //     if (
-      //       (prevX && currentVar === prevX) ||
-      //       (nextX && currentVar === nextX) ||
-      //       (prevY && currentVar === prevY) ||
-      //       (nextY && currentVar === nextY)
-      //     ) {
-      //       console.log("no moves");
-      //     }
-      //   }
-      // }
-      
-      if (
-        tileValue00 !== tileValue01 &&
-        tileValue00 !== tileValue10 &&
-        tileValue01 !== tileValue02 &&
-        tileValue01 !== tileValue11 &&
-        tileValue02 !== tileValue03 &&
-        tileValue02 !== tileValue12 &&
-        tileValue03 !== tileValue13 &&
-        tileValue10 !== tileValue20 &&
-        tileValue10 !== tileValue11 &&
-        tileValue11 !== tileValue12 &&
-        tileValue11 !== tileValue21 &&
-        tileValue12 !== tileValue13 &&
-        tileValue12 !== tileValue22 &&
-        tileValue13 !== tileValue23 &&
-        tileValue20 !== tileValue21 &&
-        tileValue20 !== tileValue30 &&
-        tileValue21 !== tileValue22 &&
-        tileValue21 !== tileValue31 &&
-        tileValue22 !== tileValue23 &&
-        tileValue22 !== tileValue32 &&
-        tileValue23 !== tileValue33 &&
-        tileValue30 !== tileValue31 &&
-        tileValue31 !== tileValue32 &&
-        tileValue32 !== tileValue33
-      )
-      console.log("game over. you lose");
-    }
 
     if (!tileValue00 && i <= randInt) {
       if (i === randInt) {
@@ -485,12 +441,86 @@ function PlayingSurface() {
       }
       i++;
     }
+    if (empties <= 1) {
+      setCheckGameOver((prevState) => !prevState);
+    }
   }, [move]);
+
+  useEffect(() => {
+    if (
+      tileValue00 &&
+      tileValue01 &&
+      tileValue02 &&
+      tileValue03 &&
+      tileValue10 &&
+      tileValue11 &&
+      tileValue12 &&
+      tileValue10 &&
+      tileValue21 &&
+      tileValue22 &&
+      tileValue23 &&
+      tileValue30 &&
+      tileValue31 &&
+      tileValue32 &&
+      tileValue33 &&
+      tileValue00 !== tileValue01 &&
+      tileValue00 !== tileValue10 &&
+      tileValue01 !== tileValue02 &&
+      tileValue01 !== tileValue11 &&
+      tileValue02 !== tileValue03 &&
+      tileValue02 !== tileValue12 &&
+      tileValue03 !== tileValue13 &&
+      tileValue10 !== tileValue20 &&
+      tileValue10 !== tileValue11 &&
+      tileValue11 !== tileValue12 &&
+      tileValue11 !== tileValue21 &&
+      tileValue12 !== tileValue13 &&
+      tileValue12 !== tileValue22 &&
+      tileValue13 !== tileValue23 &&
+      tileValue20 !== tileValue21 &&
+      tileValue20 !== tileValue30 &&
+      tileValue21 !== tileValue22 &&
+      tileValue21 !== tileValue31 &&
+      tileValue22 !== tileValue23 &&
+      tileValue22 !== tileValue32 &&
+      tileValue23 !== tileValue33 &&
+      tileValue30 !== tileValue31 &&
+      tileValue31 !== tileValue32 &&
+      tileValue32 !== tileValue33
+    ) {
+      console.log("game over. you lose");
+      setGameOver(true);
+    }
+  }, [checkGameOver]);
+
+  const today = new Date();
+  const date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+
+  const updateLeaderboard = async (e, date) => {
+    e.preventDefault();
+    await Axios.post(
+      "https://api.airtable.com/v0/appzTXHo32UrzQAzt/Leaderboard",
+      {
+        fields: {
+          username: username,
+          score: score,
+          date: date,
+        },
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
 
   return (
     <div className="flex flex-col flex-no-wrap items-center">
       <HighScoreSmall score={score} />
-      <div className="w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
+      <div className="w-64 h-64 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
         <Tile tileValue={tileValue02} />
@@ -508,7 +538,35 @@ function PlayingSurface() {
         <Tile tileValue={tileValue32} />
         <Tile tileValue={tileValue33} />
       </div>
-      <div></div>
+      {/* <Button hidden={!gameOver && "hidden"} buttonText="Game Over" /> */}
+      {/* <div className={!gameOver && "hidden"}> */}
+      <div>
+        <form
+          className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
+          onSubmit={(e) => updateLeaderboard(e, date)}
+        >
+          <div className="p-2">Congrats! Your score was: {score}</div>
+          <label className="p-2" htmlFor="username">
+            Input your Username (4 char max)
+          </label>
+          <input
+            className="text-center"
+            type="text"
+            name="username"
+            id="username"
+            value={username}
+            onChange={(e) => updateUsername(e.target.value.substr(0, 4))}
+          />
+          {/* <div className="p-2">{date}</div> */}
+          <label htmlFor="submitButton"></label>
+          <input
+            className="p-2 m-2 rounded-md shadow-md"
+            type="submit"
+            name="submitButton"
+            id="submitButton"
+          />
+        </form>
+      </div>
     </div>
   );
 }
