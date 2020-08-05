@@ -37,6 +37,8 @@ function Tile({ tileValue }) {
     color = "red-700 bg-opacity-50";
   } else if (tileValue === 81536) {
     color = "red-700 bg-opacity-75";
+  } else {
+    color = "pink-900"
   }
 
   return (
