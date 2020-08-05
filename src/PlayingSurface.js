@@ -4,6 +4,7 @@ import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
 import Axios from "axios";
 import CurrentScore from "./CurrentScore";
+import { useSwipeable, Swipeable } from "react-swipeable";
 
 function PlayingSurface() {
   const [tileValue00, updateTileValue00] = useState(null);
@@ -500,8 +501,17 @@ function PlayingSurface() {
     // history.pushState('/')
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => updateMoveLeft((prevState) => !prevState),
+    onSwipedRight: () => updateMoveRight((prevState) => !prevState),
+    onSwipedUp: () => updateMoveUp((prevState) => !prevState),
+    onSwipedDown: () => updateMoveDown((prevState) => !prevState),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
   return (
-    <div className="flex flex-col flex-no-wrap items-center justify-between">
+    <div {...handlers} className="flex flex-col flex-no-wrap items-center justify-between">
       <div>
         <CurrentScore score={score}/>
       </div>
