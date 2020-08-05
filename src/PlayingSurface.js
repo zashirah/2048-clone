@@ -8,38 +8,38 @@ import { Route, Link } from "react-router-dom";
 import Axios from "axios";
 
 function PlayingSurface() {
-  // const [tileValue00, updateTileValue00] = useState(null);
-  // const [tileValue01, updateTileValue01] = useState(null);
-  // const [tileValue02, updateTileValue02] = useState(null);
-  // const [tileValue03, updateTileValue03] = useState(null);
-  // const [tileValue10, updateTileValue10] = useState(null);
-  // const [tileValue11, updateTileValue11] = useState(null);
-  // const [tileValue12, updateTileValue12] = useState(null);
-  // const [tileValue13, updateTileValue13] = useState(null);
-  // const [tileValue20, updateTileValue20] = useState(null);
-  // const [tileValue21, updateTileValue21] = useState(null);
-  // const [tileValue22, updateTileValue22] = useState(null);
-  // const [tileValue23, updateTileValue23] = useState(null);
-  // const [tileValue30, updateTileValue30] = useState(null);
-  // const [tileValue31, updateTileValue31] = useState(null);
-  // const [tileValue32, updateTileValue32] = useState(null);
-  // const [tileValue33, updateTileValue33] = useState(null);
-  const [tileValue00, updateTileValue00] = useState(2);
-  const [tileValue01, updateTileValue01] = useState(4);
-  const [tileValue02, updateTileValue02] = useState(8);
-  const [tileValue03, updateTileValue03] = useState(16);
-  const [tileValue10, updateTileValue10] = useState(32);
-  const [tileValue11, updateTileValue11] = useState(64);
-  const [tileValue12, updateTileValue12] = useState(128);
-  const [tileValue13, updateTileValue13] = useState(256);
-  const [tileValue20, updateTileValue20] = useState(512);
-  const [tileValue21, updateTileValue21] = useState(1024);
-  const [tileValue22, updateTileValue22] = useState(2048);
-  const [tileValue23, updateTileValue23] = useState(5096);
-  const [tileValue30, updateTileValue30] = useState(10192);
-  const [tileValue31, updateTileValue31] = useState(20384);
-  const [tileValue32, updateTileValue32] = useState(40768);
+  const [tileValue00, updateTileValue00] = useState(null);
+  const [tileValue01, updateTileValue01] = useState(null);
+  const [tileValue02, updateTileValue02] = useState(null);
+  const [tileValue03, updateTileValue03] = useState(null);
+  const [tileValue10, updateTileValue10] = useState(null);
+  const [tileValue11, updateTileValue11] = useState(null);
+  const [tileValue12, updateTileValue12] = useState(null);
+  const [tileValue13, updateTileValue13] = useState(null);
+  const [tileValue20, updateTileValue20] = useState(null);
+  const [tileValue21, updateTileValue21] = useState(null);
+  const [tileValue22, updateTileValue22] = useState(null);
+  const [tileValue23, updateTileValue23] = useState(null);
+  const [tileValue30, updateTileValue30] = useState(null);
+  const [tileValue31, updateTileValue31] = useState(null);
+  const [tileValue32, updateTileValue32] = useState(null);
   const [tileValue33, updateTileValue33] = useState(null);
+  // const [tileValue00, updateTileValue00] = useState(2);
+  // const [tileValue01, updateTileValue01] = useState(4);
+  // const [tileValue02, updateTileValue02] = useState(8);
+  // const [tileValue03, updateTileValue03] = useState(16);
+  // const [tileValue10, updateTileValue10] = useState(32);
+  // const [tileValue11, updateTileValue11] = useState(64);
+  // const [tileValue12, updateTileValue12] = useState(128);
+  // const [tileValue13, updateTileValue13] = useState(256);
+  // const [tileValue20, updateTileValue20] = useState(512);
+  // const [tileValue21, updateTileValue21] = useState(1024);
+  // const [tileValue22, updateTileValue22] = useState(2048);
+  // const [tileValue23, updateTileValue23] = useState(5096);
+  // const [tileValue30, updateTileValue30] = useState(10192);
+  // const [tileValue31, updateTileValue31] = useState(20384);
+  // const [tileValue32, updateTileValue32] = useState(40768);
+  // const [tileValue33, updateTileValue33] = useState(null);
 
   const [move, setMove] = useState(false);
 
@@ -515,6 +515,7 @@ function PlayingSurface() {
         },
       }
     );
+    // history.pushState('/')
   };
 
   return (
@@ -539,33 +540,33 @@ function PlayingSurface() {
         <Tile tileValue={tileValue33} />
       </div>
       {/* <Button hidden={!gameOver && "hidden"} buttonText="Game Over" /> */}
-      {/* <div className={!gameOver && "hidden"}> */}
-      <div>
-        <form
-          className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
-          onSubmit={(e) => updateLeaderboard(e, date)}
-        >
-          <div className="p-2">Congrats! Your score was: {score}</div>
-          <label className="p-2" htmlFor="username">
-            Input your Username (4 char max)
-          </label>
-          <input
-            className="text-center"
-            type="text"
-            name="username"
-            id="username"
-            value={username}
-            onChange={(e) => updateUsername(e.target.value.substr(0, 4))}
-          />
-          {/* <div className="p-2">{date}</div> */}
-          <label htmlFor="submitButton"></label>
-          <input
-            className="p-2 m-2 rounded-md shadow-md"
-            type="submit"
-            name="submitButton"
-            id="submitButton"
-          />
-        </form>
+      <div className={!gameOver ? "hidden" : ""}>
+      {/* <div> */}
+          <form
+            className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
+            onSubmit={(e) => updateLeaderboard(e, date)}
+          >
+            <div className="p-2">Congrats! Your score was: {score}</div>
+            <label className="p-2" htmlFor="username">
+              Input your Username (4 char max)
+            </label>
+            <input
+              className="text-center"
+              type="text"
+              name="username"
+              id="username"
+              value={username}
+              onChange={(e) => updateUsername(e.target.value.substr(0, 4))}
+            />
+            {/* <div className="p-2">{date}</div> */}
+            <label htmlFor="submitButton"></label>
+            <input
+              className="p-2 m-2 rounded-md shadow-md"
+              type="submit"
+              name="submitButton"
+              id="submitButton"
+            />
+          </form>
       </div>
     </div>
   );
