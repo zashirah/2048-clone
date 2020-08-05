@@ -15,7 +15,7 @@ import HighScoreSmall from './HighScoreSmall'
 
 function App() {
   return (
-    <div className="bg-gray-200 w-screen h-screen">
+    <div className="w-screen h-screen bg-gray-100">
       <Route path="/" exact>
         <div className="w-screen h-screen flex flex-col flex-no-wrap items-center justify-around mb-2">
           <Title />

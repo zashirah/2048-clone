@@ -5,22 +5,38 @@ import Tile from "./Tile.js";
 import HighScoreSmall from "./HighScoreSmall";
 
 function PlayingSurface() {
-  const [tileValue00, updateTileValue00] = useState(1);
-  const [tileValue01, updateTileValue01] = useState(2);
-  const [tileValue02, updateTileValue02] = useState(3);
-  const [tileValue03, updateTileValue03] = useState(4);
-  const [tileValue10, updateTileValue10] = useState(5);
-  const [tileValue11, updateTileValue11] = useState(6);
-  const [tileValue12, updateTileValue12] = useState(7);
-  const [tileValue13, updateTileValue13] = useState(8);
-  const [tileValue20, updateTileValue20] = useState(9);
-  const [tileValue21, updateTileValue21] = useState(10);
-  const [tileValue22, updateTileValue22] = useState(11);
-  const [tileValue23, updateTileValue23] = useState(12);
-  const [tileValue30, updateTileValue30] = useState(13);
-  const [tileValue31, updateTileValue31] = useState(14);
+  const [tileValue00, updateTileValue00] = useState(null);
+  const [tileValue01, updateTileValue01] = useState(null);
+  const [tileValue02, updateTileValue02] = useState(null);
+  const [tileValue03, updateTileValue03] = useState(null);
+  const [tileValue10, updateTileValue10] = useState(null);
+  const [tileValue11, updateTileValue11] = useState(null);
+  const [tileValue12, updateTileValue12] = useState(null);
+  const [tileValue13, updateTileValue13] = useState(null);
+  const [tileValue20, updateTileValue20] = useState(null);
+  const [tileValue21, updateTileValue21] = useState(null);
+  const [tileValue22, updateTileValue22] = useState(null);
+  const [tileValue23, updateTileValue23] = useState(null);
+  const [tileValue30, updateTileValue30] = useState(null);
+  const [tileValue31, updateTileValue31] = useState(null);
   const [tileValue32, updateTileValue32] = useState(null);
   const [tileValue33, updateTileValue33] = useState(null);
+  //  const [tileValue00, updateTileValue00] = useState(2);
+  //  const [tileValue01, updateTileValue01] = useState(4);
+  //  const [tileValue02, updateTileValue02] = useState(8);
+  //  const [tileValue03, updateTileValue03] = useState(16);
+  //  const [tileValue10, updateTileValue10] = useState(32);
+  //  const [tileValue11, updateTileValue11] = useState(64);
+  //  const [tileValue12, updateTileValue12] = useState(128);
+  //  const [tileValue13, updateTileValue13] = useState(256);
+  //  const [tileValue20, updateTileValue20] = useState(512);
+  //  const [tileValue21, updateTileValue21] = useState(1024);
+  //  const [tileValue22, updateTileValue22] = useState(2048);
+  //  const [tileValue23, updateTileValue23] = useState(5096);
+  //  const [tileValue30, updateTileValue30] = useState(10192);
+  //  const [tileValue31, updateTileValue31] = useState(20384);
+  //  const [tileValue32, updateTileValue32] = useState(40768);
+  //  const [tileValue33, updateTileValue33] = useState(81536);
 
   const [move, setMove] = useState(false);
 
@@ -474,7 +490,7 @@ function PlayingSurface() {
   return (
     <div className="flex flex-col flex-no-wrap items-center">
       <HighScoreSmall score={score} />
-      <div className="w-64 bg-gray-400 flex flex-row flex-wrap rounded-lg">
+      <div className="w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
         <Tile tileValue={tileValue02} />

@@ -6195,6 +6195,10 @@ video {
   height: 3rem;
 }
 
+.h-14  {
+  height: 3.5rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -6225,6 +6229,10 @@ video {
 
 .h-64 {
   height: 16rem;
+}
+
+.h-72 {
+  height: 18rem;
 }
 
 .h-auto {
@@ -11776,6 +11784,10 @@ video {
   width: 3rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -11806,6 +11818,10 @@ video {
 
 .w-64 {
   width: 16rem;
+}
+
+.w-72 {
+  width: 18rem;
 }
 
 .w-auto {
