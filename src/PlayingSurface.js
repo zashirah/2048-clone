@@ -5,20 +5,20 @@ import Tile from "./Tile.js";
 import HighScoreSmall from "./HighScoreSmall";
 
 function PlayingSurface() {
-  const [tileValue00, updateTileValue00] = useState(null);
-  const [tileValue01, updateTileValue01] = useState(null);
-  const [tileValue02, updateTileValue02] = useState(null);
-  const [tileValue03, updateTileValue03] = useState(null);
-  const [tileValue10, updateTileValue10] = useState(null);
-  const [tileValue11, updateTileValue11] = useState(null);
-  const [tileValue12, updateTileValue12] = useState(null);
-  const [tileValue13, updateTileValue13] = useState(null);
-  const [tileValue20, updateTileValue20] = useState(null);
-  const [tileValue21, updateTileValue21] = useState(null);
-  const [tileValue22, updateTileValue22] = useState(null);
-  const [tileValue23, updateTileValue23] = useState(null);
-  const [tileValue30, updateTileValue30] = useState(null);
-  const [tileValue31, updateTileValue31] = useState(null);
+  const [tileValue00, updateTileValue00] = useState(1);
+  const [tileValue01, updateTileValue01] = useState(2);
+  const [tileValue02, updateTileValue02] = useState(3);
+  const [tileValue03, updateTileValue03] = useState(4);
+  const [tileValue10, updateTileValue10] = useState(5);
+  const [tileValue11, updateTileValue11] = useState(6);
+  const [tileValue12, updateTileValue12] = useState(7);
+  const [tileValue13, updateTileValue13] = useState(8);
+  const [tileValue20, updateTileValue20] = useState(9);
+  const [tileValue21, updateTileValue21] = useState(10);
+  const [tileValue22, updateTileValue22] = useState(11);
+  const [tileValue23, updateTileValue23] = useState(12);
+  const [tileValue30, updateTileValue30] = useState(13);
+  const [tileValue31, updateTileValue31] = useState(14);
   const [tileValue32, updateTileValue32] = useState(null);
   const [tileValue33, updateTileValue33] = useState(null);
 
@@ -318,26 +318,60 @@ function PlayingSurface() {
 
     console.log(empties);
     if (empties <= 1) {
-      for (let x = 0; x < 4; x++) {
-        for (let y = 0; y < 4; y++) {
-          let currentVar = eval(`tileValue${x}${y}`);
-          let prevY = eval(`tileValue${x}${y - 1}`);
-          let nextY = eval(`tileValue${x}${y + 1}`);
-          let prevX = eval(`tileValue${x - 1}${y}`);
-          let nextX = eval(`tileValue${x + 1}${y}`);
-          if (
-            (prevX && currentVar === prevX) ||
-            (nextX && currentVar === nextX) ||
-            (prevY && currentVar === prevY) ||
-            (nextY && currentVar === nextY)
-          ) {
-            console.log("no moves");
-          }
-        }
-      }
+      // for (let x = 0; x < 4; x++) {
+      //   for (let y = 0; y < 4; y++) {
+      //     let currentVar = eval(`tileValue${x}${y}`);
+      //     console.log('current var')
+      //     console.log(currentVar)
 
+      //     if (y - 1) >= 0 {
+            
+      //     }
+
+      //     // let prevY = eval(`tileValue${x}${y - 1}`) || false;
+      //     // let nextY = eval(`tileValue${x}${y + 1}`) || false;
+      //     // let prevX = eval(`tileValue${x - 1}${y}`) || false;
+      //     // let nextX = eval(`tileValue${x + 1}${y}`) || false;
+      //     if (
+      //       (prevX && currentVar === prevX) ||
+      //       (nextX && currentVar === nextX) ||
+      //       (prevY && currentVar === prevY) ||
+      //       (nextY && currentVar === nextY)
+      //     ) {
+      //       console.log("no moves");
+      //     }
+      //   }
+      // }
+      
+      if (
+        tileValue00 !== tileValue01 &&
+        tileValue00 !== tileValue10 &&
+        tileValue01 !== tileValue02 &&
+        tileValue01 !== tileValue11 &&
+        tileValue02 !== tileValue03 &&
+        tileValue02 !== tileValue12 &&
+        tileValue03 !== tileValue13 &&
+        tileValue10 !== tileValue20 &&
+        tileValue10 !== tileValue11 &&
+        tileValue11 !== tileValue12 &&
+        tileValue11 !== tileValue21 &&
+        tileValue12 !== tileValue13 &&
+        tileValue12 !== tileValue22 &&
+        tileValue13 !== tileValue23 &&
+        tileValue20 !== tileValue21 &&
+        tileValue20 !== tileValue30 &&
+        tileValue21 !== tileValue22 &&
+        tileValue21 !== tileValue31 &&
+        tileValue22 !== tileValue23 &&
+        tileValue22 !== tileValue32 &&
+        tileValue23 !== tileValue33 &&
+        tileValue30 !== tileValue31 &&
+        tileValue31 !== tileValue32 &&
+        tileValue32 !== tileValue33
+      )
       console.log("game over. you lose");
     }
+
     if (!tileValue00 && i <= randInt) {
       if (i === randInt) {
         updateTileValue00(rand2Or4);
