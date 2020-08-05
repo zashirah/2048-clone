@@ -11,7 +11,7 @@ function Leaderboard({ data }) {
               Name
             </th>
             <th className="px-2 py-1 text-center lg:text-2xl">Score</th>
-            <th className="px-2 py-1 w-24 md:w-48 text-center lg:text-2xl">
+            <th className="px-2 py-1 w-48 text-center lg:text-2xl">
               Date
             </th>
           </tr>
@@ -26,7 +26,7 @@ function Leaderboard({ data }) {
               <td className="border px-2 py-1 text-center lg:text-2xl">
                 {row.fields.score}
               </td>
-              <td className="border px-2 py-1 w-24 md:w-48 text-center lg:text-2xl">
+              <td className="border px-2 py-1 w-48 text-center lg:text-2xl">
                 {row.fields.date}
               </td>
             </tr>
