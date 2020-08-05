@@ -15,6 +15,7 @@ function App() {
   const [leaderboardData, updateLeaderboardData] = useState([]);
   const [highScore, updateHighScore] = useState(0);
   const [highScoreUsername, updateHighScoreUsername] = useState("");
+  const [rerunLeaderboard, updateRerunLeaderboard] = useState(false)
 
   useEffect(() => {
     const apiCall = async () => {
@@ -32,7 +33,7 @@ function App() {
       updateHighScoreUsername(data.data.records[0].fields.username);
     };
     apiCall();
-  }, []);
+  }, [rerunLeaderboard]);
 
   return (
     <div className="w-screen h-screen bg-gray-100">
@@ -76,7 +77,10 @@ function App() {
                 <Leaderboard data={leaderboardData} />
               </div>
               <div className="flex flex-col flex-no-wrap items-center sm:justify-around lg:justify-start">
-                <PlayingSurface />
+                <PlayingSurface
+                  updateRerunLeaderboard={updateRerunLeaderboard}
+                  rerunLeaderboard={rerunLeaderboard}
+                />
                 <HighScore
                   highScore={highScore}
                   highScoreUsername={highScoreUsername}

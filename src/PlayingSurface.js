@@ -7,7 +7,7 @@ import CurrentScore from "./CurrentScore";
 import { useSwipeable, Swipeable } from "react-swipeable";
 import { useHistory } from "react-router-dom"
 
-function PlayingSurface() {
+function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   const [tileValue00, updateTileValue00] = useState(null);
   const [tileValue01, updateTileValue01] = useState(null);
   const [tileValue02, updateTileValue02] = useState(null);
@@ -481,8 +481,8 @@ function PlayingSurface() {
   const date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  let history = useHistory()
-  
+  let history = useHistory();
+
   const updateLeaderboard = async (e, date) => {
     e.preventDefault();
     await Axios.post(
@@ -501,8 +501,9 @@ function PlayingSurface() {
         },
       }
     );
-    setGameOver(false)
-    history.push('/')
+    setGameOver(false);
+    updateRerunLeaderboard(!rerunLeaderboard)
+    history.push("/");
   };
 
   const handlers = useSwipeable({
@@ -515,11 +516,20 @@ function PlayingSurface() {
   });
 
   return (
-    <div {...handlers} className="flex flex-col flex-no-wrap items-center justify-between">
+    <div
+      {...handlers}
+      className="flex flex-col flex-no-wrap items-center justify-between"
+    >
       <div>
-        <CurrentScore score={score}/>
+        <CurrentScore score={score} />
       </div>
-      <div className="my-4 w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900">
+      <div
+        className={
+          gameOver
+            ? "hidden"
+            : "my-4 w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900"
+        }
+      >
         <Tile tileValue={tileValue00} />
         <Tile tileValue={tileValue01} />
         <Tile tileValue={tileValue02} />
