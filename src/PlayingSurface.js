@@ -4,8 +4,9 @@ import moveTiles from "./moveTiles2";
 import Tile from "./Tile.js";
 import Axios from "axios";
 import CurrentScore from "./CurrentScore";
-import { useSwipeable, Swipeable } from "react-swipeable";
+import { useSwipeable } from "react-swipeable";
 import { useHistory } from "react-router-dom"
+import { motion } from "framer-motion"
 
 function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   const [tileValue00, updateTileValue00] = useState(null);
@@ -302,6 +303,7 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
     };
   }, []);
 
+  // fill random value
   useEffect(() => {
     const stateArray = [
       tileValue00,
@@ -472,7 +474,7 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       tileValue31 !== tileValue32 &&
       tileValue32 !== tileValue33
     ) {
-      console.log("game over. you lose");
+      // console.log("game over. you lose");
       setGameOver(true);
     }
   }, [checkGameOver]);
@@ -530,22 +532,54 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
             : "my-4 w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900"
         }
       >
-        <Tile tileValue={tileValue00} />
-        <Tile tileValue={tileValue01} />
-        <Tile tileValue={tileValue02} />
-        <Tile tileValue={tileValue03} />
-        <Tile tileValue={tileValue10} />
-        <Tile tileValue={tileValue11} />
-        <Tile tileValue={tileValue12} />
-        <Tile tileValue={tileValue13} />
-        <Tile tileValue={tileValue20} />
-        <Tile tileValue={tileValue21} />
-        <Tile tileValue={tileValue22} />
-        <Tile tileValue={tileValue23} />
-        <Tile tileValue={tileValue30} />
-        <Tile tileValue={tileValue31} />
-        <Tile tileValue={tileValue32} />
-        <Tile tileValue={tileValue33} />
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue00} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue01} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue02} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue03} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue10} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue11} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue12} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue13} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue20} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue21} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue22} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue23} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue30} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue31} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue32} />
+        </motion.div>
+        <motion.div animate={{}} transition={{ duration: 2 }}>
+          <Tile tileValue={tileValue33} />
+        </motion.div>
       </div>
       {/* <HighScore highScore={highScore} highScoreUsername={highScoreUsername} /> */}
       {/* <Button hidden={!gameOver && "hidden"} buttonText="Game Over" /> */}
