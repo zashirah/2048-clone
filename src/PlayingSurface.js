@@ -5,8 +5,9 @@ import Tile from "./Tile.js";
 import Axios from "axios";
 import CurrentScore from "./CurrentScore";
 import { useSwipeable } from "react-swipeable";
-import { useHistory } from "react-router-dom"
-import { motion } from "framer-motion"
+import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
+import AddScore from "./AddScore";
 
 function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   const [tileValue00, updateTileValue00] = useState(null);
@@ -504,10 +505,11 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       }
     );
     setGameOver(false);
-    updateRerunLeaderboard(!rerunLeaderboard)
+    updateRerunLeaderboard(!rerunLeaderboard);
     history.push("/");
   };
 
+  // need to add code source
   const handlers = useSwipeable({
     onSwipedLeft: () => updateMoveLeft((prevState) => !prevState),
     onSwipedRight: () => updateMoveRight((prevState) => !prevState),
@@ -532,85 +534,33 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
             : "my-4 w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900"
         }
       >
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue00} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue01} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue02} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue03} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue10} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue11} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue12} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue13} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue20} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue21} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue22} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue23} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue30} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue31} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue32} />
-        </motion.div>
-        <motion.div animate={{}} transition={{ duration: 2 }}>
-          <Tile tileValue={tileValue33} />
-        </motion.div>
+        <Tile tileValue={tileValue00} />
+        <Tile tileValue={tileValue01} />
+        <Tile tileValue={tileValue02} />
+        <Tile tileValue={tileValue03} />
+        <Tile tileValue={tileValue10} />
+        <Tile tileValue={tileValue11} />
+        <Tile tileValue={tileValue12} />
+        <Tile tileValue={tileValue13} />
+        <Tile tileValue={tileValue20} />
+        <Tile tileValue={tileValue21} />
+        <Tile tileValue={tileValue22} />
+        <Tile tileValue={tileValue23} />
+        <Tile tileValue={tileValue30} />
+        <Tile tileValue={tileValue31} />
+        <Tile tileValue={tileValue32} />
+        <Tile tileValue={tileValue33} />
       </div>
-      {/* <HighScore highScore={highScore} highScoreUsername={highScoreUsername} /> */}
-      {/* <Button hidden={!gameOver && "hidden"} buttonText="Game Over" /> */}
-      <div className={!gameOver ? "hidden" : ""}>
-        {/* <div> */}
-        <form
-          className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
-          onSubmit={(e) => updateLeaderboard(e, date)}
-        >
-          <div className="p-2">Congrats! Your score was: {score}</div>
-          <label className="p-2" htmlFor="username">
-            Input your Username (4 char max)
-          </label>
-          <input
-            className="text-center"
-            type="text"
-            name="username"
-            id="username"
-            value={username}
-            onChange={(e) => updateUsername(e.target.value.substr(0, 4))}
-          />
-          {/* <div className="p-2">{date}</div> */}
-          <label htmlFor="submitButton"></label>
-          <input
-            className="p-2 m-2 rounded-md shadow-md"
-            type="submit"
-            name="submitButton"
-            id="submitButton"
-          />
-        </form>
-      </div>
+      {/* <div className={!gameOver ? "hidden" : ""}> */}
+      <AddScore
+        username={username}
+        date={date}
+        updateLeaderboard={updateLeaderboard}
+        updateUsername={updateUsername}
+        score={score}
+        gameOver={gameOver}
+      />
+      {/* </div> */}
     </div>
   );
 }
