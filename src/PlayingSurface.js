@@ -8,6 +8,7 @@ import { useSwipeable } from "react-swipeable";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import AddScore from "./AddScore";
+import TileSurface from "./TileSurface"
 
 function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   const [tileValue00, updateTileValue00] = useState(null);
@@ -527,7 +528,26 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       <div>
         <CurrentScore score={score} />
       </div>
-      <div
+      <TileSurface
+        gameOver={gameOver}
+        tileValue00={tileValue00}
+        tileValue01={tileValue01}
+        tileValue02={tileValue02}
+        tileValue03={tileValue03}
+        tileValue10={tileValue10}
+        tileValue11={tileValue11}
+        tileValue12={tileValue12}
+        tileValue13={tileValue13}
+        tileValue20={tileValue20}
+        tileValue21={tileValue21}
+        tileValue22={tileValue22}
+        tileValue23={tileValue23}
+        tileValue30={tileValue30}
+        tileValue31={tileValue31}
+        tileValue32={tileValue32}
+        tileValue33={tileValue33}
+      />
+      {/* <div
         className={
           gameOver
             ? "hidden"
@@ -550,7 +570,7 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
         <Tile tileValue={tileValue31} />
         <Tile tileValue={tileValue32} />
         <Tile tileValue={tileValue33} />
-      </div>
+      </div> */}
       {/* <div className={!gameOver ? "hidden" : ""}> */}
       <AddScore
         username={username}
