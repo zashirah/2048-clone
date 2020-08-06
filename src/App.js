@@ -11,6 +11,7 @@ import HighScore from "./HighScore";
 import Leaderboard from "./Leaderboard";
 import HowTo from "./HowTo";
 import Axios from "axios";
+import { motion, AnimatePresence } from "framer-motion"
 
 function App() {
   const [leaderboardData, updateLeaderboardData] = useState([]);
@@ -37,7 +38,13 @@ function App() {
   }, [rerunLeaderboard]);
 
   return (
-    <div className="w-screen h-screen bg-gray-100">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ opacity: 0 }}
+      className="w-screen h-screen bg-gray-100"
+    >
       <div className="w-screen h-screen bg-gray-100">
         <Route path="/" exact>
           <div className="w-screen h-screen flex flex-col flex-no-wrap items-center py-16">
@@ -106,7 +113,7 @@ function App() {
           </div>
         </Route>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

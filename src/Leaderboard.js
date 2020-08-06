@@ -1,8 +1,15 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Leaderboard({ data }) {
   return (
-    <div className="border border-blue-800 rounded-lg bg-blue-300 bg-opacity-75 mt-4 pb-2">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ opacity: 0 }}
+      className="border border-blue-800 rounded-lg bg-blue-300 bg-opacity-75 mt-4 pb-2"
+    >
       <table className={`table-auto flex flex-col items-center`}>
         <thead>
           <tr>
@@ -11,9 +18,7 @@ function Leaderboard({ data }) {
               Name
             </th>
             <th className="px-2 py-1 text-center lg:text-2xl">Score</th>
-            <th className="px-2 py-1 w-48 text-center lg:text-2xl">
-              Date
-            </th>
+            <th className="px-2 py-1 w-48 text-center lg:text-2xl">Date</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +38,7 @@ function Leaderboard({ data }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </motion.div>
   );
 }
 

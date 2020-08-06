@@ -521,7 +521,11 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   });
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{opacity: 0}}
+      transition={{ opacity: 0 }}
       {...handlers}
       className="flex flex-col flex-no-wrap items-center justify-between"
     >
@@ -581,7 +585,7 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
         gameOver={gameOver}
       />
       {/* </div> */}
-    </div>
+    </motion.div>
   );
 }
 export default PlayingSurface;
