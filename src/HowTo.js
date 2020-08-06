@@ -1,5 +1,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from "framer-motion";
+import picture1 from "./images/HowTo-Picture1.png";
+import picture2 from "./images/HowTo-Picture2.png"
 
 function HowTo() {
   return (
@@ -8,6 +10,7 @@ function HowTo() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ opacity: 0 }}
+      className="flex flex-col flex-no-wrap items-center"
     >
       <h1 className="font-bold text-3xl text-center pb-4">Intructions</h1>
       <p>
@@ -18,7 +21,8 @@ function HowTo() {
       <p>
         The goal of the game is to merge tiles until you get to the 2048 tile.
       </p>
-      <img src="src/images/HowTo-Picture1.jpg" alt="How to play 2048" />
+      <img src={picture1} alt="How to play 2048 - slide the tiles to combine them" className="w-1/2 mt-4" />
+      <img src={picture2} alt="How to play 2048 - get to the 2048 tile" className="w-1/2 mt-4" />
     </motion.div>
   );
 }
