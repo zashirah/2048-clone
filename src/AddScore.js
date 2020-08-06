@@ -19,7 +19,17 @@ function AddScore({ username, date, updateLeaderboard, updateUsername, score, ga
             opacity: 0,
             y: 500,
           }}
-          className="fixed left-auto top-auto "
+          // className="fixed left-auto top-auto "
+          style={{
+            position: "fixed",
+            left: "auto",
+            top: "auto",
+            transform: "translate3d(-50%, 0, 0)",
+            backgroundColor: "white",
+            padding: 0,
+            margin: 0,
+            borderRadius: '.5rem',
+          }}
         >
           <motion.form
             // initial={{
@@ -35,7 +45,7 @@ function AddScore({ username, date, updateLeaderboard, updateUsername, score, ga
             //   opacity: 0,
             //   x: 500,
             // }}
-            className="flex flex-col flex-no-wrap p-4 m-4 bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
+            className="flex flex-col flex-no-wrap bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
             onSubmit={(e) => updateLeaderboard(e, date)}
           >
             <div className="p-2">Congrats! Your score was: {score}</div>
