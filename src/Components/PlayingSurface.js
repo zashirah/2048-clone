@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./PlayingSurface.css";
-import moveTiles from "./moveTiles2";
-import Tile from "./Tile.js";
+import moveTiles from "../Functions/moveTiles";
 import Axios from "axios";
 import CurrentScore from "./CurrentScore";
 import { useSwipeable } from "react-swipeable";
