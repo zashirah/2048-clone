@@ -17,7 +17,7 @@ function _2048Celebration({ hit2048Tile, updateHit2048Tile }) {
           value="2048"
           onClick={() => updateHit2048Tile(false)}
         >
-          Congrats! You got to the 2048. Click the tile to continue playing.
+          Congrats! You got to the 2048 tile. Click the tile to continue playing.
         </motion.div>
       )}
     </AnimatePresence>
