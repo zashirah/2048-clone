@@ -4,13 +4,13 @@ import Axios from "axios";
 import CurrentScore from "./CurrentScore";
 import { useSwipeable } from "react-swipeable";
 import { useHistory } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; 
 import AddScore from "./AddScore";
 import TileSurface from "./TileSurface"
 import _2048Celebration from "./2048Celebration";
 
 function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
-  const [tileValue00, updateTileValue00] = useState(1024);
+  const [tileValue00, updateTileValue00] = useState(null);
   const [tileValue01, updateTileValue01] = useState(null);
   const [tileValue02, updateTileValue02] = useState(null);
   const [tileValue03, updateTileValue03] = useState(null);
@@ -42,6 +42,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   const [username, updateUsername] = useState("");
 
   const [hit2048Tile, updateHit2048Tile] = useState(false)
+
+  let history = useHistory();
 
   // move up
   useEffect(() => {
@@ -287,6 +289,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
     }
   }, [moveRight]);
 
+
+  // used similar code in a tutorial that had to do with ReactMapGl: https://www.youtube.com/watch?v=JJatzkPcmoI
   useEffect(() => {
     const leftListener = (e) => {
       if (e.key === "ArrowLeft") {
@@ -502,7 +506,6 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
   const date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  let history = useHistory();
 
   const updateLeaderboard = async (e, date) => {
     e.preventDefault();
@@ -527,7 +530,7 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
     history.push("/");
   };
 
-  // need to add code source
+  // used react-swipeable documentation for this: https://www.npmjs.com/package/react-swipeable
   const handlers = useSwipeable({
     onSwipedLeft: () => updateMoveLeft((prevState) => !prevState),
     onSwipedRight: () => updateMoveRight((prevState) => !prevState),
@@ -542,7 +545,6 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ opacity: 0 }}
       {...handlers}
       className="flex flex-col flex-no-wrap items-center justify-between"
     >

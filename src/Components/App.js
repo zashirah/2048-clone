@@ -11,7 +11,7 @@ import HighScore from "./HighScore";
 import Leaderboard from "./Leaderboard";
 import HowTo from "./HowTo";
 import Axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function App() {
   const [leaderboardData, updateLeaderboardData] = useState([]);
@@ -42,7 +42,6 @@ function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ opacity: 0 }}
       className="w-screen h-screen bg-gray-100"
     >
       <div className="w-screen h-screen bg-gray-100">

@@ -1,6 +1,8 @@
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
+
+// used the this tutorial (https://www.leveluptutorials.com/tutorials/animating-react-with-framer-motion/) and Framer Motion documentation to learn how to implement framer motion
 function _2048Celebration({ hit2048Tile, updateHit2048Tile }) {
   return (
     <AnimatePresence>

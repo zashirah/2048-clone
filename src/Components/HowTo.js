@@ -9,7 +9,6 @@ function HowTo() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ opacity: 0 }}
       className="flex flex-col flex-no-wrap items-center"
     >
       <h1 className="font-bold text-3xl text-center pb-4 mx-4">Intructions</h1>

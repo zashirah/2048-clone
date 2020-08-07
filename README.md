@@ -86,18 +86,19 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic Structure | L-M | 3hrs| hrs | hrs |
-| Base Styling | L-M | 3hrs| hrs | hrs |
-| Game Logic | H | 6hrs| hrs | hrs |
-| Game Design (visual) | H | 6hrs| hrs | hrs |
-| Leaderboard | M | 4hrs| hrs | hrs |
-| How-to | L | 4hrs| hrs | hrs |
-| Design Tablet | M | 3hrs| hrs | hrs |
-| Design Desktop | M | 3hrs| hrs | hrs |
-| Add Swipe | L-M | 4hrs| hrs | hrs |
-| Add Local Storage | L | 4hrs| hrs | hrs |
-| Add Animations | L | 2hrs| hrs | hrs |
-| Total | H | 43hrs| hrs | hrs |
+| Basic Structure | L-M | 3hrs| 4hrs | 4hrs |
+| Base Styling | L-M | 3hrs| 4hrs | 4hrs |
+| Game Logic | H | 6hrs| 8hrs | 6hrs |
+| Game Design (visual) | H | 6hrs| 4hrs | 4hrs |
+| Leaderboard | M | 4hrs| 4hrs | 4hrs |
+| How-to | L | 4hrs| 2hrs | 2hrs |
+| Design Tablet | M | 3hrs| 3hrs | 3hrs |
+| Design Desktop | M | 3hrs| 4hrs | 4hrs |
+| Add Swipe | L-M | 4hrs| 1hrs | 1hrs |
+| Add Local Storage | L | 4hrs| 0hrs | 0hrs |
+| Add Animations | L | 2hrs | 4hrs | 4hrs |
+| Debugging | n/a | n/a | 4hrs | 4hrs |
+| Total | H | 43hrs| 40hrs | 40hrs |
 
 ## Code Snippet
 

@@ -6,7 +6,6 @@ function CurrentScore({ score }) {
       <div>Current Score:</div>
       <div>
         {score}
-        {/* {console.log(highScore)} */}
       </div>
     </div>
   );
