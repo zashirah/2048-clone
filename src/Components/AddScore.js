@@ -9,7 +9,7 @@ function AddScore({ username, date, updateLeaderboard, updateUsername, score, ga
           initial={{
             opacity: 0,
             y: 500,
-          }}
+        }}
           animate={{
             opacity: 1,
             y: 0,
@@ -32,19 +32,6 @@ function AddScore({ username, date, updateLeaderboard, updateUsername, score, ga
           }}
         >
           <motion.form
-            // initial={{
-            //   opacity: 0,
-            //   x: 500,
-            // }}
-            // animate={{
-            //   opacity: 1,
-            //   x: 0,
-            // }}
-            // transition={{ duration: 1 }}
-            // exit={{
-            //   opacity: 0,
-            //   x: 500,
-            // }}
             className="flex flex-col flex-no-wrap bg-blue-500 bg-opacity-50 text-lg font-bold text-gray-900 rounded-lg justify-center items-center shadow-lg"
             onSubmit={(e) => updateLeaderboard(e, date)}
           >

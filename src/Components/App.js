@@ -11,7 +11,7 @@ import HighScore from "./HighScore";
 import Leaderboard from "./Leaderboard";
 import HowTo from "./HowTo";
 import Axios from "axios";
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
   const [leaderboardData, updateLeaderboardData] = useState([]);

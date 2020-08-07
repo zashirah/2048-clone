@@ -7,9 +7,10 @@ import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import AddScore from "./AddScore";
 import TileSurface from "./TileSurface"
+import _2048Celebration from "./2048Celebration";
 
 function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
-  const [tileValue00, updateTileValue00] = useState(null);
+  const [tileValue00, updateTileValue00] = useState(1024);
   const [tileValue01, updateTileValue01] = useState(null);
   const [tileValue02, updateTileValue02] = useState(null);
   const [tileValue03, updateTileValue03] = useState(null);
@@ -40,6 +41,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
 
   const [username, updateUsername] = useState("");
 
+  const [hit2048Tile, updateHit2048Tile] = useState(false)
+
   // move up
   useEffect(() => {
     const check1 = moveTiles(
@@ -51,7 +54,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue10,
       updateTileValue20,
       updateTileValue30,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check2 = moveTiles(
       tileValue01,
@@ -62,7 +66,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue11,
       updateTileValue21,
       updateTileValue31,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check3 = moveTiles(
       tileValue02,
@@ -73,7 +78,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue12,
       updateTileValue22,
       updateTileValue32,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check4 = moveTiles(
       tileValue03,
@@ -84,7 +90,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue13,
       updateTileValue23,
       updateTileValue33,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     if (
       check1 !== "no-move" ||
@@ -108,7 +115,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue20,
       updateTileValue10,
       updateTileValue00,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check2 = moveTiles(
       tileValue31,
@@ -119,7 +127,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue21,
       updateTileValue11,
       updateTileValue01,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check3 = moveTiles(
       tileValue32,
@@ -130,7 +139,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue22,
       updateTileValue12,
       updateTileValue02,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check4 = moveTiles(
       tileValue33,
@@ -141,7 +151,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue23,
       updateTileValue13,
       updateTileValue03,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     if (
       check1 !== "no-move" ||
@@ -165,7 +176,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue11,
       updateTileValue12,
       updateTileValue13,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check2 = moveTiles(
       tileValue00,
@@ -176,7 +188,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue01,
       updateTileValue02,
       updateTileValue03,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check3 = moveTiles(
       tileValue20,
@@ -187,7 +200,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue21,
       updateTileValue22,
       updateTileValue23,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check4 = moveTiles(
       tileValue30,
@@ -198,7 +212,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue31,
       updateTileValue32,
       updateTileValue33,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     if (
       check1 !== "no-move" ||
@@ -222,7 +237,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue12,
       updateTileValue11,
       updateTileValue10,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check2 = moveTiles(
       tileValue03,
@@ -233,7 +249,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue02,
       updateTileValue01,
       updateTileValue00,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check3 = moveTiles(
       tileValue23,
@@ -244,7 +261,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue22,
       updateTileValue21,
       updateTileValue20,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     const check4 = moveTiles(
       tileValue33,
@@ -255,7 +273,8 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
       updateTileValue32,
       updateTileValue31,
       updateTileValue30,
-      updateScore
+      updateScore,
+      updateHit2048Tile
     );
     if (
       check1 !== "no-move" ||
@@ -522,7 +541,7 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{opacity: 0}}
+      exit={{ opacity: 0 }}
       transition={{ opacity: 0 }}
       {...handlers}
       className="flex flex-col flex-no-wrap items-center justify-between"
@@ -549,31 +568,6 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
         tileValue32={tileValue32}
         tileValue33={tileValue33}
       />
-      {/* <div
-        className={
-          gameOver
-            ? "hidden"
-            : "my-4 w-72 h-72 bg-gray-100 bg-opacity-75 flex flex-row flex-wrap rounded-lg justify-around items-center border border-gray-900"
-        }
-      >
-        <Tile tileValue={tileValue00} />
-        <Tile tileValue={tileValue01} />
-        <Tile tileValue={tileValue02} />
-        <Tile tileValue={tileValue03} />
-        <Tile tileValue={tileValue10} />
-        <Tile tileValue={tileValue11} />
-        <Tile tileValue={tileValue12} />
-        <Tile tileValue={tileValue13} />
-        <Tile tileValue={tileValue20} />
-        <Tile tileValue={tileValue21} />
-        <Tile tileValue={tileValue22} />
-        <Tile tileValue={tileValue23} />
-        <Tile tileValue={tileValue30} />
-        <Tile tileValue={tileValue31} />
-        <Tile tileValue={tileValue32} />
-        <Tile tileValue={tileValue33} />
-      </div> */}
-      {/* <div className={!gameOver ? "hidden" : ""}> */}
       <AddScore
         username={username}
         date={date}
@@ -582,7 +576,10 @@ function PlayingSurface({ updateRerunLeaderboard, rerunLeaderboard }) {
         score={score}
         gameOver={gameOver}
       />
-      {/* </div> */}
+      <_2048Celebration
+        hit2048Tile={hit2048Tile}
+        updateHit2048Tile={updateHit2048Tile}
+      />
     </motion.div>
   );
 }
